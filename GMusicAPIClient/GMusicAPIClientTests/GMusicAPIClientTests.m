@@ -7,6 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "XCTestCase+AsyncTesting.h"
 #import "GMusicAPIClient.h"
 
 @interface GMusicAPIClientTests : XCTestCase
@@ -27,19 +28,9 @@
     [super tearDown];
 }
 
-//- (void)testExample
-//{
-//    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
-//}
-
 - (void)testWebClientInit {
     XCTAssertTrue([GMWebClient sharedInstance], @"Error creating singleton");
 }
 
 
-- (void)testWebClientLogin {
-    GMCredentials *cred = [GMCredentials credentialsWithUsername:@"u" password:@"p"];
-    [[GMWebClient sharedInstance] loginWithCredentials:cred completion:nil];
-    XCTAssertTrue([[GMWebClient sharedInstance] isAuthenticated], @"Auth failed");
-}
 @end

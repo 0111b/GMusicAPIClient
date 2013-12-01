@@ -41,6 +41,8 @@
 		E66954F4184BBD3B00EDB7C7 /* GMAPIClient+Protected.h in Headers */ = {isa = PBXBuildFile; fileRef = E60F65F9184A62670033498D /* GMAPIClient+Protected.h */; };
 		E66954F5184BBD3B00EDB7C7 /* GMWebClient.h in Headers */ = {isa = PBXBuildFile; fileRef = E6413A6C184A65A300D4D22B /* GMWebClient.h */; };
 		E66954F6184BBD3B00EDB7C7 /* GMTrackInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = E6413A75184ADD6400D4D22B /* GMTrackInfo.h */; };
+		E6695578184BC98500EDB7C7 /* XCTestCase+AsyncTesting.m in Sources */ = {isa = PBXBuildFile; fileRef = E6695577184BC98500EDB7C7 /* XCTestCase+AsyncTesting.m */; };
+		E6695579184BC98500EDB7C7 /* XCTestCase+AsyncTesting.m in Sources */ = {isa = PBXBuildFile; fileRef = E6695577184BC98500EDB7C7 /* XCTestCase+AsyncTesting.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +109,8 @@
 		E66954DD184BBC8800EDB7C7 /* GMusicAPIClient-osxTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GMusicAPIClient-osxTests-Info.plist"; sourceTree = "<group>"; };
 		E66954DF184BBC8800EDB7C7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E66954E1184BBC8800EDB7C7 /* GMusicAPIClient_osxTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GMusicAPIClient_osxTests.m; sourceTree = "<group>"; };
+		E6695576184BC98500EDB7C7 /* XCTestCase+AsyncTesting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XCTestCase+AsyncTesting.h"; sourceTree = "<group>"; };
+		E6695577184BC98500EDB7C7 /* XCTestCase+AsyncTesting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "XCTestCase+AsyncTesting.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,6 +222,8 @@
 		E6445525184A48EE005D3CDC /* GMusicAPIClientTests */ = {
 			isa = PBXGroup;
 			children = (
+				E6695576184BC98500EDB7C7 /* XCTestCase+AsyncTesting.h */,
+				E6695577184BC98500EDB7C7 /* XCTestCase+AsyncTesting.m */,
 				E644552B184A48EE005D3CDC /* GMusicAPIClientTests.m */,
 				E6445526184A48EE005D3CDC /* Supporting Files */,
 			);
@@ -434,6 +440,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6695578184BC98500EDB7C7 /* XCTestCase+AsyncTesting.m in Sources */,
 				E644552C184A48EE005D3CDC /* GMusicAPIClientTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -455,6 +462,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6695579184BC98500EDB7C7 /* XCTestCase+AsyncTesting.m in Sources */,
 				E66954E2184BBC8800EDB7C7 /* GMusicAPIClient_osxTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -749,6 +757,7 @@
 				E66954E5184BBC8800EDB7C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E66954E6184BBC8800EDB7C7 /* Build configuration list for PBXNativeTarget "GMusicAPIClient-osxTests" */ = {
 			isa = XCConfigurationList;
@@ -757,6 +766,7 @@
 				E66954E8184BBC8800EDB7C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

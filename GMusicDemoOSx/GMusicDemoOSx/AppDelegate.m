@@ -16,7 +16,7 @@
 }
 
 - (IBAction)loginTouched:(id)sender {
-    NSString *username = @"adanfermer@gmail.com";
+    NSString *username = @"username";
     NSString *password = @"thyifbvzvwkmngyc";
     
     [[GMWebClient sharedInstance] loginWithCredentials:[GMCredentials credentialsWithUsername:username password:password] completion:^(GMResult *result) {
