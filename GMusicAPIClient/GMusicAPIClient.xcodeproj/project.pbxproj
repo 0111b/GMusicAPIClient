@@ -1,0 +1,764 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E60F65F5184A61560033498D /* GMAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = E60F65F4184A61560033498D /* GMAPIClient.m */; };
+		E60F65F8184A61800033498D /* GMCredentials.m in Sources */ = {isa = PBXBuildFile; fileRef = E60F65F7184A61800033498D /* GMCredentials.m */; };
+		E60F65FB184A62670033498D /* GMAPIClient+Protected.m in Sources */ = {isa = PBXBuildFile; fileRef = E60F65FA184A62670033498D /* GMAPIClient+Protected.m */; };
+		E6413A6E184A65A300D4D22B /* GMWebClient.m in Sources */ = {isa = PBXBuildFile; fileRef = E6413A6D184A65A300D4D22B /* GMWebClient.m */; };
+		E6413A72184A6D1300D4D22B /* GMResult.m in Sources */ = {isa = PBXBuildFile; fileRef = E6413A71184A6D1300D4D22B /* GMResult.m */; };
+		E6413A77184ADD6400D4D22B /* GMTrackInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = E6413A76184ADD6400D4D22B /* GMTrackInfo.m */; };
+		E6445510184A48EE005D3CDC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E644550F184A48EE005D3CDC /* Foundation.framework */; };
+		E6445515184A48EE005D3CDC /* GMusicAPIClient.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = E6445514184A48EE005D3CDC /* GMusicAPIClient.h */; };
+		E644551E184A48EE005D3CDC /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E644551D184A48EE005D3CDC /* XCTest.framework */; };
+		E644551F184A48EE005D3CDC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E644550F184A48EE005D3CDC /* Foundation.framework */; };
+		E6445521184A48EE005D3CDC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6445520184A48EE005D3CDC /* UIKit.framework */; };
+		E6445524184A48EE005D3CDC /* libGMusicAPIClient-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E644550C184A48EE005D3CDC /* libGMusicAPIClient-iOS.a */; };
+		E644552A184A48EE005D3CDC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E6445528184A48EE005D3CDC /* InfoPlist.strings */; };
+		E644552C184A48EE005D3CDC /* GMusicAPIClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E644552B184A48EE005D3CDC /* GMusicAPIClientTests.m */; };
+		E66954CA184BBC8800EDB7C7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6695491184BBC0D00EDB7C7 /* Cocoa.framework */; };
+		E66954D6184BBC8800EDB7C7 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E644551D184A48EE005D3CDC /* XCTest.framework */; };
+		E66954D7184BBC8800EDB7C7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6695491184BBC0D00EDB7C7 /* Cocoa.framework */; };
+		E66954DA184BBC8800EDB7C7 /* libGMusicAPIClient-osx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E66954C9184BBC8800EDB7C7 /* libGMusicAPIClient-osx.a */; };
+		E66954E0184BBC8800EDB7C7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E66954DE184BBC8800EDB7C7 /* InfoPlist.strings */; };
+		E66954E2184BBC8800EDB7C7 /* GMusicAPIClient_osxTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E66954E1184BBC8800EDB7C7 /* GMusicAPIClient_osxTests.m */; };
+		E66954E9184BBD0200EDB7C7 /* GMResult.m in Sources */ = {isa = PBXBuildFile; fileRef = E6413A71184A6D1300D4D22B /* GMResult.m */; };
+		E66954EA184BBD0200EDB7C7 /* GMCredentials.m in Sources */ = {isa = PBXBuildFile; fileRef = E60F65F7184A61800033498D /* GMCredentials.m */; };
+		E66954EB184BBD0200EDB7C7 /* GMAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = E60F65F4184A61560033498D /* GMAPIClient.m */; };
+		E66954EC184BBD0200EDB7C7 /* GMAPIClient+Protected.m in Sources */ = {isa = PBXBuildFile; fileRef = E60F65FA184A62670033498D /* GMAPIClient+Protected.m */; };
+		E66954ED184BBD0200EDB7C7 /* GMWebClient.m in Sources */ = {isa = PBXBuildFile; fileRef = E6413A6D184A65A300D4D22B /* GMWebClient.m */; };
+		E66954EE184BBD0200EDB7C7 /* GMTrackInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = E6413A76184ADD6400D4D22B /* GMTrackInfo.m */; };
+		E66954EF184BBD2800EDB7C7 /* GMusicAPIClient.h in Headers */ = {isa = PBXBuildFile; fileRef = E6445514184A48EE005D3CDC /* GMusicAPIClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E66954F0184BBD3B00EDB7C7 /* GMLog.h in Headers */ = {isa = PBXBuildFile; fileRef = E6413A74184AC4FE00D4D22B /* GMLog.h */; };
+		E66954F1184BBD3B00EDB7C7 /* GMResult.h in Headers */ = {isa = PBXBuildFile; fileRef = E6413A70184A6D1300D4D22B /* GMResult.h */; };
+		E66954F2184BBD3B00EDB7C7 /* GMCredentials.h in Headers */ = {isa = PBXBuildFile; fileRef = E60F65F6184A61800033498D /* GMCredentials.h */; };
+		E66954F3184BBD3B00EDB7C7 /* GMAPIClient.h in Headers */ = {isa = PBXBuildFile; fileRef = E60F65F3184A61560033498D /* GMAPIClient.h */; };
+		E66954F4184BBD3B00EDB7C7 /* GMAPIClient+Protected.h in Headers */ = {isa = PBXBuildFile; fileRef = E60F65F9184A62670033498D /* GMAPIClient+Protected.h */; };
+		E66954F5184BBD3B00EDB7C7 /* GMWebClient.h in Headers */ = {isa = PBXBuildFile; fileRef = E6413A6C184A65A300D4D22B /* GMWebClient.h */; };
+		E66954F6184BBD3B00EDB7C7 /* GMTrackInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = E6413A75184ADD6400D4D22B /* GMTrackInfo.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E6445522184A48EE005D3CDC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E6445504184A48EE005D3CDC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E644550B184A48EE005D3CDC;
+			remoteInfo = GMusicAPIClient;
+		};
+		E66954D8184BBC8800EDB7C7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E6445504184A48EE005D3CDC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E66954C8184BBC8800EDB7C7;
+			remoteInfo = "GMusicAPIClient-osx";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E644550A184A48EE005D3CDC /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				E6445515184A48EE005D3CDC /* GMusicAPIClient.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		E60F65F3184A61560033498D /* GMAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMAPIClient.h; sourceTree = "<group>"; };
+		E60F65F4184A61560033498D /* GMAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMAPIClient.m; sourceTree = "<group>"; };
+		E60F65F6184A61800033498D /* GMCredentials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMCredentials.h; sourceTree = "<group>"; };
+		E60F65F7184A61800033498D /* GMCredentials.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMCredentials.m; sourceTree = "<group>"; };
+		E60F65F9184A62670033498D /* GMAPIClient+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GMAPIClient+Protected.h"; sourceTree = "<group>"; };
+		E60F65FA184A62670033498D /* GMAPIClient+Protected.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GMAPIClient+Protected.m"; sourceTree = "<group>"; };
+		E6413A6C184A65A300D4D22B /* GMWebClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMWebClient.h; sourceTree = "<group>"; };
+		E6413A6D184A65A300D4D22B /* GMWebClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMWebClient.m; sourceTree = "<group>"; };
+		E6413A70184A6D1300D4D22B /* GMResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMResult.h; sourceTree = "<group>"; };
+		E6413A71184A6D1300D4D22B /* GMResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMResult.m; sourceTree = "<group>"; };
+		E6413A74184AC4FE00D4D22B /* GMLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMLog.h; sourceTree = "<group>"; };
+		E6413A75184ADD6400D4D22B /* GMTrackInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMTrackInfo.h; sourceTree = "<group>"; };
+		E6413A76184ADD6400D4D22B /* GMTrackInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMTrackInfo.m; sourceTree = "<group>"; };
+		E644550C184A48EE005D3CDC /* libGMusicAPIClient-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libGMusicAPIClient-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E644550F184A48EE005D3CDC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E6445513184A48EE005D3CDC /* GMusicAPIClient-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GMusicAPIClient-Prefix.pch"; sourceTree = "<group>"; };
+		E6445514184A48EE005D3CDC /* GMusicAPIClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMusicAPIClient.h; sourceTree = "<group>"; };
+		E644551C184A48EE005D3CDC /* GMusicAPIClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GMusicAPIClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E644551D184A48EE005D3CDC /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		E6445520184A48EE005D3CDC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		E6445527184A48EE005D3CDC /* GMusicAPIClientTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GMusicAPIClientTests-Info.plist"; sourceTree = "<group>"; };
+		E6445529184A48EE005D3CDC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E644552B184A48EE005D3CDC /* GMusicAPIClientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GMusicAPIClientTests.m; sourceTree = "<group>"; };
+		E6695491184BBC0D00EDB7C7 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		E6695494184BBC0D00EDB7C7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E6695495184BBC0D00EDB7C7 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		E6695496184BBC0D00EDB7C7 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		E66954C9184BBC8800EDB7C7 /* libGMusicAPIClient-osx.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libGMusicAPIClient-osx.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E66954CD184BBC8800EDB7C7 /* GMusicAPIClient-osx-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GMusicAPIClient-osx-Prefix.pch"; sourceTree = "<group>"; };
+		E66954D5184BBC8800EDB7C7 /* GMusicAPIClient-osxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "GMusicAPIClient-osxTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E66954DD184BBC8800EDB7C7 /* GMusicAPIClient-osxTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GMusicAPIClient-osxTests-Info.plist"; sourceTree = "<group>"; };
+		E66954DF184BBC8800EDB7C7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E66954E1184BBC8800EDB7C7 /* GMusicAPIClient_osxTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GMusicAPIClient_osxTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E6445509184A48EE005D3CDC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6445510184A48EE005D3CDC /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E6445519184A48EE005D3CDC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E644551E184A48EE005D3CDC /* XCTest.framework in Frameworks */,
+				E6445521184A48EE005D3CDC /* UIKit.framework in Frameworks */,
+				E644551F184A48EE005D3CDC /* Foundation.framework in Frameworks */,
+				E6445524184A48EE005D3CDC /* libGMusicAPIClient-iOS.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E66954C6184BBC8800EDB7C7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E66954CA184BBC8800EDB7C7 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E66954D2184BBC8800EDB7C7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E66954DA184BBC8800EDB7C7 /* libGMusicAPIClient-osx.a in Frameworks */,
+				E66954D7184BBC8800EDB7C7 /* Cocoa.framework in Frameworks */,
+				E66954D6184BBC8800EDB7C7 /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E6445503184A48EE005D3CDC = {
+			isa = PBXGroup;
+			children = (
+				E6445511184A48EE005D3CDC /* GMusicAPIClient */,
+				E6445525184A48EE005D3CDC /* GMusicAPIClientTests */,
+				E66954CB184BBC8800EDB7C7 /* GMusicAPIClient-osx */,
+				E66954DB184BBC8800EDB7C7 /* GMusicAPIClient-osxTests */,
+				E644550E184A48EE005D3CDC /* Frameworks */,
+				E644550D184A48EE005D3CDC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E644550D184A48EE005D3CDC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E644550C184A48EE005D3CDC /* libGMusicAPIClient-iOS.a */,
+				E644551C184A48EE005D3CDC /* GMusicAPIClientTests.xctest */,
+				E66954C9184BBC8800EDB7C7 /* libGMusicAPIClient-osx.a */,
+				E66954D5184BBC8800EDB7C7 /* GMusicAPIClient-osxTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E644550E184A48EE005D3CDC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E644550F184A48EE005D3CDC /* Foundation.framework */,
+				E644551D184A48EE005D3CDC /* XCTest.framework */,
+				E6445520184A48EE005D3CDC /* UIKit.framework */,
+				E6695491184BBC0D00EDB7C7 /* Cocoa.framework */,
+				E6695493184BBC0D00EDB7C7 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E6445511184A48EE005D3CDC /* GMusicAPIClient */ = {
+			isa = PBXGroup;
+			children = (
+				E6445514184A48EE005D3CDC /* GMusicAPIClient.h */,
+				E6413A74184AC4FE00D4D22B /* GMLog.h */,
+				E6413A70184A6D1300D4D22B /* GMResult.h */,
+				E6413A71184A6D1300D4D22B /* GMResult.m */,
+				E60F65F6184A61800033498D /* GMCredentials.h */,
+				E60F65F7184A61800033498D /* GMCredentials.m */,
+				E60F65F3184A61560033498D /* GMAPIClient.h */,
+				E60F65F4184A61560033498D /* GMAPIClient.m */,
+				E60F65F9184A62670033498D /* GMAPIClient+Protected.h */,
+				E60F65FA184A62670033498D /* GMAPIClient+Protected.m */,
+				E6413A6C184A65A300D4D22B /* GMWebClient.h */,
+				E6413A6D184A65A300D4D22B /* GMWebClient.m */,
+				E6413A75184ADD6400D4D22B /* GMTrackInfo.h */,
+				E6413A76184ADD6400D4D22B /* GMTrackInfo.m */,
+				E6445512184A48EE005D3CDC /* Supporting Files */,
+			);
+			path = GMusicAPIClient;
+			sourceTree = "<group>";
+		};
+		E6445512184A48EE005D3CDC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E6445513184A48EE005D3CDC /* GMusicAPIClient-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E6445525184A48EE005D3CDC /* GMusicAPIClientTests */ = {
+			isa = PBXGroup;
+			children = (
+				E644552B184A48EE005D3CDC /* GMusicAPIClientTests.m */,
+				E6445526184A48EE005D3CDC /* Supporting Files */,
+			);
+			path = GMusicAPIClientTests;
+			sourceTree = "<group>";
+		};
+		E6445526184A48EE005D3CDC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E6445527184A48EE005D3CDC /* GMusicAPIClientTests-Info.plist */,
+				E6445528184A48EE005D3CDC /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E6695493184BBC0D00EDB7C7 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E6695494184BBC0D00EDB7C7 /* Foundation.framework */,
+				E6695495184BBC0D00EDB7C7 /* CoreData.framework */,
+				E6695496184BBC0D00EDB7C7 /* AppKit.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		E66954CB184BBC8800EDB7C7 /* GMusicAPIClient-osx */ = {
+			isa = PBXGroup;
+			children = (
+				E66954CC184BBC8800EDB7C7 /* Supporting Files */,
+			);
+			path = "GMusicAPIClient-osx";
+			sourceTree = "<group>";
+		};
+		E66954CC184BBC8800EDB7C7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E66954CD184BBC8800EDB7C7 /* GMusicAPIClient-osx-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E66954DB184BBC8800EDB7C7 /* GMusicAPIClient-osxTests */ = {
+			isa = PBXGroup;
+			children = (
+				E66954E1184BBC8800EDB7C7 /* GMusicAPIClient_osxTests.m */,
+				E66954DC184BBC8800EDB7C7 /* Supporting Files */,
+			);
+			path = "GMusicAPIClient-osxTests";
+			sourceTree = "<group>";
+		};
+		E66954DC184BBC8800EDB7C7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E66954DD184BBC8800EDB7C7 /* GMusicAPIClient-osxTests-Info.plist */,
+				E66954DE184BBC8800EDB7C7 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		E66954C7184BBC8800EDB7C7 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E66954F6184BBD3B00EDB7C7 /* GMTrackInfo.h in Headers */,
+				E66954EF184BBD2800EDB7C7 /* GMusicAPIClient.h in Headers */,
+				E66954F4184BBD3B00EDB7C7 /* GMAPIClient+Protected.h in Headers */,
+				E66954F1184BBD3B00EDB7C7 /* GMResult.h in Headers */,
+				E66954F5184BBD3B00EDB7C7 /* GMWebClient.h in Headers */,
+				E66954F3184BBD3B00EDB7C7 /* GMAPIClient.h in Headers */,
+				E66954F0184BBD3B00EDB7C7 /* GMLog.h in Headers */,
+				E66954F2184BBD3B00EDB7C7 /* GMCredentials.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		E644550B184A48EE005D3CDC /* GMusicAPIClient-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E644552F184A48EE005D3CDC /* Build configuration list for PBXNativeTarget "GMusicAPIClient-iOS" */;
+			buildPhases = (
+				E6445508184A48EE005D3CDC /* Sources */,
+				E6445509184A48EE005D3CDC /* Frameworks */,
+				E644550A184A48EE005D3CDC /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "GMusicAPIClient-iOS";
+			productName = GMusicAPIClient;
+			productReference = E644550C184A48EE005D3CDC /* libGMusicAPIClient-iOS.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		E644551B184A48EE005D3CDC /* GMusicAPIClientTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E6445532184A48EE005D3CDC /* Build configuration list for PBXNativeTarget "GMusicAPIClientTests" */;
+			buildPhases = (
+				E6445518184A48EE005D3CDC /* Sources */,
+				E6445519184A48EE005D3CDC /* Frameworks */,
+				E644551A184A48EE005D3CDC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E6445523184A48EE005D3CDC /* PBXTargetDependency */,
+			);
+			name = GMusicAPIClientTests;
+			productName = GMusicAPIClientTests;
+			productReference = E644551C184A48EE005D3CDC /* GMusicAPIClientTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E66954C8184BBC8800EDB7C7 /* GMusicAPIClient-osx */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E66954E3184BBC8800EDB7C7 /* Build configuration list for PBXNativeTarget "GMusicAPIClient-osx" */;
+			buildPhases = (
+				E66954C5184BBC8800EDB7C7 /* Sources */,
+				E66954C6184BBC8800EDB7C7 /* Frameworks */,
+				E66954C7184BBC8800EDB7C7 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "GMusicAPIClient-osx";
+			productName = "GMusicAPIClient-osx";
+			productReference = E66954C9184BBC8800EDB7C7 /* libGMusicAPIClient-osx.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		E66954D4184BBC8800EDB7C7 /* GMusicAPIClient-osxTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E66954E6184BBC8800EDB7C7 /* Build configuration list for PBXNativeTarget "GMusicAPIClient-osxTests" */;
+			buildPhases = (
+				E66954D1184BBC8800EDB7C7 /* Sources */,
+				E66954D2184BBC8800EDB7C7 /* Frameworks */,
+				E66954D3184BBC8800EDB7C7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E66954D9184BBC8800EDB7C7 /* PBXTargetDependency */,
+			);
+			name = "GMusicAPIClient-osxTests";
+			productName = "GMusicAPIClient-osxTests";
+			productReference = E66954D5184BBC8800EDB7C7 /* GMusicAPIClient-osxTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E6445504184A48EE005D3CDC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Alexandr Goncharov";
+			};
+			buildConfigurationList = E6445507184A48EE005D3CDC /* Build configuration list for PBXProject "GMusicAPIClient" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = E6445503184A48EE005D3CDC;
+			productRefGroup = E644550D184A48EE005D3CDC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E644550B184A48EE005D3CDC /* GMusicAPIClient-iOS */,
+				E644551B184A48EE005D3CDC /* GMusicAPIClientTests */,
+				E66954C8184BBC8800EDB7C7 /* GMusicAPIClient-osx */,
+				E66954D4184BBC8800EDB7C7 /* GMusicAPIClient-osxTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E644551A184A48EE005D3CDC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E644552A184A48EE005D3CDC /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E66954D3184BBC8800EDB7C7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E66954E0184BBC8800EDB7C7 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E6445508184A48EE005D3CDC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6413A72184A6D1300D4D22B /* GMResult.m in Sources */,
+				E6413A77184ADD6400D4D22B /* GMTrackInfo.m in Sources */,
+				E6413A6E184A65A300D4D22B /* GMWebClient.m in Sources */,
+				E60F65F8184A61800033498D /* GMCredentials.m in Sources */,
+				E60F65FB184A62670033498D /* GMAPIClient+Protected.m in Sources */,
+				E60F65F5184A61560033498D /* GMAPIClient.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E6445518184A48EE005D3CDC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E644552C184A48EE005D3CDC /* GMusicAPIClientTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E66954C5184BBC8800EDB7C7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E66954E9184BBD0200EDB7C7 /* GMResult.m in Sources */,
+				E66954EA184BBD0200EDB7C7 /* GMCredentials.m in Sources */,
+				E66954EB184BBD0200EDB7C7 /* GMAPIClient.m in Sources */,
+				E66954EC184BBD0200EDB7C7 /* GMAPIClient+Protected.m in Sources */,
+				E66954ED184BBD0200EDB7C7 /* GMWebClient.m in Sources */,
+				E66954EE184BBD0200EDB7C7 /* GMTrackInfo.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E66954D1184BBC8800EDB7C7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E66954E2184BBC8800EDB7C7 /* GMusicAPIClient_osxTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E6445523184A48EE005D3CDC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E644550B184A48EE005D3CDC /* GMusicAPIClient-iOS */;
+			targetProxy = E6445522184A48EE005D3CDC /* PBXContainerItemProxy */;
+		};
+		E66954D9184BBC8800EDB7C7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E66954C8184BBC8800EDB7C7 /* GMusicAPIClient-osx */;
+			targetProxy = E66954D8184BBC8800EDB7C7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E6445528184A48EE005D3CDC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E6445529184A48EE005D3CDC /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		E66954DE184BBC8800EDB7C7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E66954DF184BBC8800EDB7C7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E644552D184A48EE005D3CDC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		E644552E184A48EE005D3CDC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E6445530184A48EE005D3CDC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/GMusicAPIClient.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GMusicAPIClient/GMusicAPIClient-Prefix.pch";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		E6445531184A48EE005D3CDC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/GMusicAPIClient.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GMusicAPIClient/GMusicAPIClient-Prefix.pch";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		E6445533184A48EE005D3CDC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GMusicAPIClient/GMusicAPIClient-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "GMusicAPIClientTests/GMusicAPIClientTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		E6445534184A48EE005D3CDC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GMusicAPIClient/GMusicAPIClient-Prefix.pch";
+				INFOPLIST_FILE = "GMusicAPIClientTests/GMusicAPIClientTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+		E66954E4184BBC8800EDB7C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GMusicAPIClient-osx/GMusicAPIClient-osx-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		E66954E5184BBC8800EDB7C7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GMusicAPIClient-osx/GMusicAPIClient-osx-Prefix.pch";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		E66954E7184BBC8800EDB7C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GMusicAPIClient-osx/GMusicAPIClient-osx-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "GMusicAPIClient-osxTests/GMusicAPIClient-osxTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		E66954E8184BBC8800EDB7C7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GMusicAPIClient-osx/GMusicAPIClient-osx-Prefix.pch";
+				INFOPLIST_FILE = "GMusicAPIClient-osxTests/GMusicAPIClient-osxTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E6445507184A48EE005D3CDC /* Build configuration list for PBXProject "GMusicAPIClient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E644552D184A48EE005D3CDC /* Debug */,
+				E644552E184A48EE005D3CDC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E644552F184A48EE005D3CDC /* Build configuration list for PBXNativeTarget "GMusicAPIClient-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E6445530184A48EE005D3CDC /* Debug */,
+				E6445531184A48EE005D3CDC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E6445532184A48EE005D3CDC /* Build configuration list for PBXNativeTarget "GMusicAPIClientTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E6445533184A48EE005D3CDC /* Debug */,
+				E6445534184A48EE005D3CDC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E66954E3184BBC8800EDB7C7 /* Build configuration list for PBXNativeTarget "GMusicAPIClient-osx" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E66954E4184BBC8800EDB7C7 /* Debug */,
+				E66954E5184BBC8800EDB7C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		E66954E6184BBC8800EDB7C7 /* Build configuration list for PBXNativeTarget "GMusicAPIClient-osxTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E66954E7184BBC8800EDB7C7 /* Debug */,
+				E66954E8184BBC8800EDB7C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E6445504184A48EE005D3CDC /* Project object */;
+}
