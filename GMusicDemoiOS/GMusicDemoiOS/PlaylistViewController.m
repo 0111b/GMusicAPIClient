@@ -39,7 +39,7 @@
 
 - (IBAction)refreshTouched:(id)sender {
     [[GMWebClient sharedInstance] allSongsWithCompletion:^(GMResult *result) {
-        NSLog(@"get all %d count %d",result.status, [result.data count]);
+        NSLog(@"get all %lu count %lu",result.status, (unsigned long)[result.data count]);
         if ([result isValid]) {
             self.songList = result.data;
             [self.songListTable reloadData];
@@ -51,7 +51,7 @@
     AVPlayerItem *playItem = [[AVPlayerItem alloc] initWithURL:url];
     [self.player replaceCurrentItemWithPlayerItem:playItem];
     [self.player play];
-    NSLog(@"player status %d",self.player.status);
+    NSLog(@"player status %ld",(long)self.player.status);
 }
 
 #pragma mark -
@@ -83,7 +83,7 @@
     GMTrackInfo *track = self.songList[indexPath.row];
     [[GMWebClient sharedInstance] streamURLForTrack:track
                                          completion:^(GMResult *result) {
-                                             NSLog(@"stream %d data %@",result.status, result.data);
+                                             NSLog(@"stream %lu data %@",result.status, result.data);
                                              if ([result isValid]) {
                                                  [self playURL:result.data];
                                                  self.currentTrackLabel.text = [NSString stringWithFormat:@"%@ - %@",track.artist,track.title];

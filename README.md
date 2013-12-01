@@ -2,7 +2,7 @@ GMusicAPIClient: an unofficial API for Google Play Music
 =================================================================
 
 GMusicAPIClient allows control of Google Music with Obj-c interface.
-
+Currently very, very basic, only supports getting all songs and retrieving stream urls.
 **GMusicAPIClient is not supported nor endorsed by Google.**
 
 Based on  Gregory Wicks [source][1] 

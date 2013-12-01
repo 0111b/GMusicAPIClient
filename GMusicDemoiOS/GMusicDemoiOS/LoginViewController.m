@@ -37,7 +37,7 @@
     GMCredentials *credentials = [GMCredentials credentialsWithUsername:self.loginTextField.text
                                                                password:self.passwordTextField.text];
     [[GMWebClient sharedInstance] loginWithCredentials:credentials completion:^(GMResult *result) {
-        NSLog(@"Login %d",result.status);
+        NSLog(@"Login %lu",result.status);
         if ([result isValid]) {
             [self performSegueWithIdentifier:@"ShowPlaylistSegue" sender:self];
         }

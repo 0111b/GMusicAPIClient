@@ -58,6 +58,13 @@
 			remoteGlobalIDString = E66954D5184BBC8800EDB7C7;
 			remoteInfo = "GMusicAPIClient-osxTests";
 		};
+		E66956B0184BE3C700EDB7C7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E6695538184BBDF400EDB7C7 /* GMusicAPIClient.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = E66954C8184BBC8800EDB7C7;
+			remoteInfo = "GMusicAPIClient-osx";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -214,6 +221,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				E66956B1184BE3C700EDB7C7 /* PBXTargetDependency */,
 			);
 			name = GMusicDemoOSx;
 			productName = GMusicDemoOSx;
@@ -357,6 +365,11 @@
 			target = E66954FF184BBDB100EDB7C7 /* GMusicDemoOSx */;
 			targetProxy = E6695525184BBDB100EDB7C7 /* PBXContainerItemProxy */;
 		};
+		E66956B1184BE3C700EDB7C7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "GMusicAPIClient-osx";
+			targetProxy = E66956B0184BE3C700EDB7C7 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -473,7 +486,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"\"$(SRCROOT)/../GMusicAPIClient/GMusicAPIClient\"/**",
+					"\"$(SRCROOT)/../GMusicAPIClient/Core\"/**",
 				);
 				INFOPLIST_FILE = "GMusicDemoOSx/GMusicDemoOSx-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -491,7 +504,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"\"$(SRCROOT)/../GMusicAPIClient/GMusicAPIClient\"/**",
+					"\"$(SRCROOT)/../GMusicAPIClient/Core\"/**",
 				);
 				INFOPLIST_FILE = "GMusicDemoOSx/GMusicDemoOSx-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -514,6 +527,11 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"\"$(SRCROOT)/../GMusicAPIClient/Core\"",
+				);
 				INFOPLIST_FILE = "GMusicDemoOSxTests/GMusicDemoOSxTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
@@ -532,6 +550,11 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GMusicDemoOSx/GMusicDemoOSx-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"\"$(SRCROOT)/../GMusicAPIClient/Core\"",
+				);
 				INFOPLIST_FILE = "GMusicDemoOSxTests/GMusicDemoOSxTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";

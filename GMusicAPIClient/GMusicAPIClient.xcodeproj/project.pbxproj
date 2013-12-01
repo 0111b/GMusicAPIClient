@@ -7,14 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E60F65F5184A61560033498D /* GMAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = E60F65F4184A61560033498D /* GMAPIClient.m */; };
-		E60F65F8184A61800033498D /* GMCredentials.m in Sources */ = {isa = PBXBuildFile; fileRef = E60F65F7184A61800033498D /* GMCredentials.m */; };
-		E60F65FB184A62670033498D /* GMAPIClient+Protected.m in Sources */ = {isa = PBXBuildFile; fileRef = E60F65FA184A62670033498D /* GMAPIClient+Protected.m */; };
-		E6413A6E184A65A300D4D22B /* GMWebClient.m in Sources */ = {isa = PBXBuildFile; fileRef = E6413A6D184A65A300D4D22B /* GMWebClient.m */; };
-		E6413A72184A6D1300D4D22B /* GMResult.m in Sources */ = {isa = PBXBuildFile; fileRef = E6413A71184A6D1300D4D22B /* GMResult.m */; };
-		E6413A77184ADD6400D4D22B /* GMTrackInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = E6413A76184ADD6400D4D22B /* GMTrackInfo.m */; };
 		E6445510184A48EE005D3CDC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E644550F184A48EE005D3CDC /* Foundation.framework */; };
-		E6445515184A48EE005D3CDC /* GMusicAPIClient.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = E6445514184A48EE005D3CDC /* GMusicAPIClient.h */; };
 		E644551E184A48EE005D3CDC /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E644551D184A48EE005D3CDC /* XCTest.framework */; };
 		E644551F184A48EE005D3CDC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E644550F184A48EE005D3CDC /* Foundation.framework */; };
 		E6445521184A48EE005D3CDC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6445520184A48EE005D3CDC /* UIKit.framework */; };
@@ -27,24 +20,43 @@
 		E66954DA184BBC8800EDB7C7 /* libGMusicAPIClient-osx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E66954C9184BBC8800EDB7C7 /* libGMusicAPIClient-osx.a */; };
 		E66954E0184BBC8800EDB7C7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E66954DE184BBC8800EDB7C7 /* InfoPlist.strings */; };
 		E66954E2184BBC8800EDB7C7 /* GMusicAPIClient_osxTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E66954E1184BBC8800EDB7C7 /* GMusicAPIClient_osxTests.m */; };
-		E66954E9184BBD0200EDB7C7 /* GMResult.m in Sources */ = {isa = PBXBuildFile; fileRef = E6413A71184A6D1300D4D22B /* GMResult.m */; };
-		E66954EA184BBD0200EDB7C7 /* GMCredentials.m in Sources */ = {isa = PBXBuildFile; fileRef = E60F65F7184A61800033498D /* GMCredentials.m */; };
-		E66954EB184BBD0200EDB7C7 /* GMAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = E60F65F4184A61560033498D /* GMAPIClient.m */; };
-		E66954EC184BBD0200EDB7C7 /* GMAPIClient+Protected.m in Sources */ = {isa = PBXBuildFile; fileRef = E60F65FA184A62670033498D /* GMAPIClient+Protected.m */; };
-		E66954ED184BBD0200EDB7C7 /* GMWebClient.m in Sources */ = {isa = PBXBuildFile; fileRef = E6413A6D184A65A300D4D22B /* GMWebClient.m */; };
-		E66954EE184BBD0200EDB7C7 /* GMTrackInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = E6413A76184ADD6400D4D22B /* GMTrackInfo.m */; };
-		E66954EF184BBD2800EDB7C7 /* GMusicAPIClient.h in Headers */ = {isa = PBXBuildFile; fileRef = E6445514184A48EE005D3CDC /* GMusicAPIClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E66954F0184BBD3B00EDB7C7 /* GMLog.h in Headers */ = {isa = PBXBuildFile; fileRef = E6413A74184AC4FE00D4D22B /* GMLog.h */; };
-		E66954F1184BBD3B00EDB7C7 /* GMResult.h in Headers */ = {isa = PBXBuildFile; fileRef = E6413A70184A6D1300D4D22B /* GMResult.h */; };
-		E66954F2184BBD3B00EDB7C7 /* GMCredentials.h in Headers */ = {isa = PBXBuildFile; fileRef = E60F65F6184A61800033498D /* GMCredentials.h */; };
-		E66954F3184BBD3B00EDB7C7 /* GMAPIClient.h in Headers */ = {isa = PBXBuildFile; fileRef = E60F65F3184A61560033498D /* GMAPIClient.h */; };
-		E66954F4184BBD3B00EDB7C7 /* GMAPIClient+Protected.h in Headers */ = {isa = PBXBuildFile; fileRef = E60F65F9184A62670033498D /* GMAPIClient+Protected.h */; };
-		E66954F5184BBD3B00EDB7C7 /* GMWebClient.h in Headers */ = {isa = PBXBuildFile; fileRef = E6413A6C184A65A300D4D22B /* GMWebClient.h */; };
-		E66954F6184BBD3B00EDB7C7 /* GMTrackInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = E6413A75184ADD6400D4D22B /* GMTrackInfo.h */; };
 		E6695578184BC98500EDB7C7 /* XCTestCase+AsyncTesting.m in Sources */ = {isa = PBXBuildFile; fileRef = E6695577184BC98500EDB7C7 /* XCTestCase+AsyncTesting.m */; };
 		E6695579184BC98500EDB7C7 /* XCTestCase+AsyncTesting.m in Sources */ = {isa = PBXBuildFile; fileRef = E6695577184BC98500EDB7C7 /* XCTestCase+AsyncTesting.m */; };
 		E6695583184BD50700EDB7C7 /* user.plist in Resources */ = {isa = PBXBuildFile; fileRef = E6695582184BD50700EDB7C7 /* user.plist */; };
 		E6695584184BD50700EDB7C7 /* user.plist in Resources */ = {isa = PBXBuildFile; fileRef = E6695582184BD50700EDB7C7 /* user.plist */; };
+		E669568D184BE2DB00EDB7C7 /* GMAPIClient+Protected.h in Headers */ = {isa = PBXBuildFile; fileRef = E669567F184BE2DB00EDB7C7 /* GMAPIClient+Protected.h */; };
+		E669568E184BE2DB00EDB7C7 /* GMAPIClient+Protected.m in Sources */ = {isa = PBXBuildFile; fileRef = E6695680184BE2DB00EDB7C7 /* GMAPIClient+Protected.m */; };
+		E669568F184BE2DB00EDB7C7 /* GMAPIClient+Protected.m in Sources */ = {isa = PBXBuildFile; fileRef = E6695680184BE2DB00EDB7C7 /* GMAPIClient+Protected.m */; };
+		E6695690184BE2DB00EDB7C7 /* GMAPIClient+Protected.m in Sources */ = {isa = PBXBuildFile; fileRef = E6695680184BE2DB00EDB7C7 /* GMAPIClient+Protected.m */; };
+		E6695691184BE2DB00EDB7C7 /* GMAPIClient+Protected.m in Sources */ = {isa = PBXBuildFile; fileRef = E6695680184BE2DB00EDB7C7 /* GMAPIClient+Protected.m */; };
+		E6695692184BE2DB00EDB7C7 /* GMAPIClient.h in Headers */ = {isa = PBXBuildFile; fileRef = E6695681184BE2DB00EDB7C7 /* GMAPIClient.h */; };
+		E6695693184BE2DB00EDB7C7 /* GMAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = E6695682184BE2DB00EDB7C7 /* GMAPIClient.m */; };
+		E6695694184BE2DB00EDB7C7 /* GMAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = E6695682184BE2DB00EDB7C7 /* GMAPIClient.m */; };
+		E6695695184BE2DB00EDB7C7 /* GMAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = E6695682184BE2DB00EDB7C7 /* GMAPIClient.m */; };
+		E6695696184BE2DB00EDB7C7 /* GMAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = E6695682184BE2DB00EDB7C7 /* GMAPIClient.m */; };
+		E6695697184BE2DB00EDB7C7 /* GMCredentials.h in Headers */ = {isa = PBXBuildFile; fileRef = E6695683184BE2DB00EDB7C7 /* GMCredentials.h */; };
+		E6695698184BE2DB00EDB7C7 /* GMCredentials.m in Sources */ = {isa = PBXBuildFile; fileRef = E6695684184BE2DB00EDB7C7 /* GMCredentials.m */; };
+		E6695699184BE2DB00EDB7C7 /* GMCredentials.m in Sources */ = {isa = PBXBuildFile; fileRef = E6695684184BE2DB00EDB7C7 /* GMCredentials.m */; };
+		E669569A184BE2DB00EDB7C7 /* GMCredentials.m in Sources */ = {isa = PBXBuildFile; fileRef = E6695684184BE2DB00EDB7C7 /* GMCredentials.m */; };
+		E669569B184BE2DB00EDB7C7 /* GMCredentials.m in Sources */ = {isa = PBXBuildFile; fileRef = E6695684184BE2DB00EDB7C7 /* GMCredentials.m */; };
+		E669569C184BE2DB00EDB7C7 /* GMLog.h in Headers */ = {isa = PBXBuildFile; fileRef = E6695685184BE2DB00EDB7C7 /* GMLog.h */; };
+		E669569D184BE2DB00EDB7C7 /* GMResult.h in Headers */ = {isa = PBXBuildFile; fileRef = E6695686184BE2DB00EDB7C7 /* GMResult.h */; };
+		E669569E184BE2DB00EDB7C7 /* GMResult.m in Sources */ = {isa = PBXBuildFile; fileRef = E6695687184BE2DB00EDB7C7 /* GMResult.m */; };
+		E669569F184BE2DB00EDB7C7 /* GMResult.m in Sources */ = {isa = PBXBuildFile; fileRef = E6695687184BE2DB00EDB7C7 /* GMResult.m */; };
+		E66956A0184BE2DB00EDB7C7 /* GMResult.m in Sources */ = {isa = PBXBuildFile; fileRef = E6695687184BE2DB00EDB7C7 /* GMResult.m */; };
+		E66956A1184BE2DB00EDB7C7 /* GMResult.m in Sources */ = {isa = PBXBuildFile; fileRef = E6695687184BE2DB00EDB7C7 /* GMResult.m */; };
+		E66956A2184BE2DB00EDB7C7 /* GMTrackInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = E6695688184BE2DB00EDB7C7 /* GMTrackInfo.h */; };
+		E66956A3184BE2DB00EDB7C7 /* GMTrackInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = E6695689184BE2DB00EDB7C7 /* GMTrackInfo.m */; };
+		E66956A4184BE2DB00EDB7C7 /* GMTrackInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = E6695689184BE2DB00EDB7C7 /* GMTrackInfo.m */; };
+		E66956A5184BE2DB00EDB7C7 /* GMTrackInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = E6695689184BE2DB00EDB7C7 /* GMTrackInfo.m */; };
+		E66956A6184BE2DB00EDB7C7 /* GMTrackInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = E6695689184BE2DB00EDB7C7 /* GMTrackInfo.m */; };
+		E66956A7184BE2DB00EDB7C7 /* GMusicAPIClient.h in Headers */ = {isa = PBXBuildFile; fileRef = E669568A184BE2DB00EDB7C7 /* GMusicAPIClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E66956A8184BE2DB00EDB7C7 /* GMWebClient.h in Headers */ = {isa = PBXBuildFile; fileRef = E669568B184BE2DB00EDB7C7 /* GMWebClient.h */; };
+		E66956A9184BE2DB00EDB7C7 /* GMWebClient.m in Sources */ = {isa = PBXBuildFile; fileRef = E669568C184BE2DB00EDB7C7 /* GMWebClient.m */; };
+		E66956AA184BE2DB00EDB7C7 /* GMWebClient.m in Sources */ = {isa = PBXBuildFile; fileRef = E669568C184BE2DB00EDB7C7 /* GMWebClient.m */; };
+		E66956AB184BE2DB00EDB7C7 /* GMWebClient.m in Sources */ = {isa = PBXBuildFile; fileRef = E669568C184BE2DB00EDB7C7 /* GMWebClient.m */; };
+		E66956AC184BE2DB00EDB7C7 /* GMWebClient.m in Sources */ = {isa = PBXBuildFile; fileRef = E669568C184BE2DB00EDB7C7 /* GMWebClient.m */; };
+		E66956AD184BE32400EDB7C7 /* GMusicAPIClient.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = E669568A184BE2DB00EDB7C7 /* GMusicAPIClient.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,30 +83,16 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				E6445515184A48EE005D3CDC /* GMusicAPIClient.h in CopyFiles */,
+				E66956AD184BE32400EDB7C7 /* GMusicAPIClient.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		E60F65F3184A61560033498D /* GMAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMAPIClient.h; sourceTree = "<group>"; };
-		E60F65F4184A61560033498D /* GMAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMAPIClient.m; sourceTree = "<group>"; };
-		E60F65F6184A61800033498D /* GMCredentials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMCredentials.h; sourceTree = "<group>"; };
-		E60F65F7184A61800033498D /* GMCredentials.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMCredentials.m; sourceTree = "<group>"; };
-		E60F65F9184A62670033498D /* GMAPIClient+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GMAPIClient+Protected.h"; sourceTree = "<group>"; };
-		E60F65FA184A62670033498D /* GMAPIClient+Protected.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GMAPIClient+Protected.m"; sourceTree = "<group>"; };
-		E6413A6C184A65A300D4D22B /* GMWebClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMWebClient.h; sourceTree = "<group>"; };
-		E6413A6D184A65A300D4D22B /* GMWebClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMWebClient.m; sourceTree = "<group>"; };
-		E6413A70184A6D1300D4D22B /* GMResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMResult.h; sourceTree = "<group>"; };
-		E6413A71184A6D1300D4D22B /* GMResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMResult.m; sourceTree = "<group>"; };
-		E6413A74184AC4FE00D4D22B /* GMLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMLog.h; sourceTree = "<group>"; };
-		E6413A75184ADD6400D4D22B /* GMTrackInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMTrackInfo.h; sourceTree = "<group>"; };
-		E6413A76184ADD6400D4D22B /* GMTrackInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMTrackInfo.m; sourceTree = "<group>"; };
 		E644550C184A48EE005D3CDC /* libGMusicAPIClient-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libGMusicAPIClient-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E644550F184A48EE005D3CDC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E6445513184A48EE005D3CDC /* GMusicAPIClient-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GMusicAPIClient-Prefix.pch"; sourceTree = "<group>"; };
-		E6445514184A48EE005D3CDC /* GMusicAPIClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMusicAPIClient.h; sourceTree = "<group>"; };
 		E644551C184A48EE005D3CDC /* GMusicAPIClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GMusicAPIClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E644551D184A48EE005D3CDC /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		E6445520184A48EE005D3CDC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -114,6 +112,20 @@
 		E6695576184BC98500EDB7C7 /* XCTestCase+AsyncTesting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XCTestCase+AsyncTesting.h"; sourceTree = "<group>"; };
 		E6695577184BC98500EDB7C7 /* XCTestCase+AsyncTesting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "XCTestCase+AsyncTesting.m"; sourceTree = "<group>"; };
 		E6695582184BD50700EDB7C7 /* user.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = user.plist; path = ../../user.plist; sourceTree = "<group>"; };
+		E669567F184BE2DB00EDB7C7 /* GMAPIClient+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GMAPIClient+Protected.h"; sourceTree = "<group>"; };
+		E6695680184BE2DB00EDB7C7 /* GMAPIClient+Protected.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GMAPIClient+Protected.m"; sourceTree = "<group>"; };
+		E6695681184BE2DB00EDB7C7 /* GMAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMAPIClient.h; sourceTree = "<group>"; };
+		E6695682184BE2DB00EDB7C7 /* GMAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMAPIClient.m; sourceTree = "<group>"; };
+		E6695683184BE2DB00EDB7C7 /* GMCredentials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMCredentials.h; sourceTree = "<group>"; };
+		E6695684184BE2DB00EDB7C7 /* GMCredentials.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMCredentials.m; sourceTree = "<group>"; };
+		E6695685184BE2DB00EDB7C7 /* GMLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMLog.h; sourceTree = "<group>"; };
+		E6695686184BE2DB00EDB7C7 /* GMResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMResult.h; sourceTree = "<group>"; };
+		E6695687184BE2DB00EDB7C7 /* GMResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMResult.m; sourceTree = "<group>"; };
+		E6695688184BE2DB00EDB7C7 /* GMTrackInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMTrackInfo.h; sourceTree = "<group>"; };
+		E6695689184BE2DB00EDB7C7 /* GMTrackInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMTrackInfo.m; sourceTree = "<group>"; };
+		E669568A184BE2DB00EDB7C7 /* GMusicAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMusicAPIClient.h; sourceTree = "<group>"; };
+		E669568B184BE2DB00EDB7C7 /* GMWebClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMWebClient.h; sourceTree = "<group>"; };
+		E669568C184BE2DB00EDB7C7 /* GMWebClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMWebClient.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +172,7 @@
 		E6445503184A48EE005D3CDC = {
 			isa = PBXGroup;
 			children = (
+				E669567E184BE2DB00EDB7C7 /* Core */,
 				E6445511184A48EE005D3CDC /* GMusicAPIClient */,
 				E6445525184A48EE005D3CDC /* GMusicAPIClientTests */,
 				E66954CB184BBC8800EDB7C7 /* GMusicAPIClient-osx */,
@@ -195,20 +208,6 @@
 		E6445511184A48EE005D3CDC /* GMusicAPIClient */ = {
 			isa = PBXGroup;
 			children = (
-				E6445514184A48EE005D3CDC /* GMusicAPIClient.h */,
-				E6413A74184AC4FE00D4D22B /* GMLog.h */,
-				E6413A70184A6D1300D4D22B /* GMResult.h */,
-				E6413A71184A6D1300D4D22B /* GMResult.m */,
-				E60F65F6184A61800033498D /* GMCredentials.h */,
-				E60F65F7184A61800033498D /* GMCredentials.m */,
-				E60F65F3184A61560033498D /* GMAPIClient.h */,
-				E60F65F4184A61560033498D /* GMAPIClient.m */,
-				E60F65F9184A62670033498D /* GMAPIClient+Protected.h */,
-				E60F65FA184A62670033498D /* GMAPIClient+Protected.m */,
-				E6413A6C184A65A300D4D22B /* GMWebClient.h */,
-				E6413A6D184A65A300D4D22B /* GMWebClient.m */,
-				E6413A75184ADD6400D4D22B /* GMTrackInfo.h */,
-				E6413A76184ADD6400D4D22B /* GMTrackInfo.m */,
 				E6445512184A48EE005D3CDC /* Supporting Files */,
 			);
 			path = GMusicAPIClient;
@@ -287,6 +286,27 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		E669567E184BE2DB00EDB7C7 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				E669568A184BE2DB00EDB7C7 /* GMusicAPIClient.h */,
+				E6695685184BE2DB00EDB7C7 /* GMLog.h */,
+				E6695683184BE2DB00EDB7C7 /* GMCredentials.h */,
+				E6695684184BE2DB00EDB7C7 /* GMCredentials.m */,
+				E6695686184BE2DB00EDB7C7 /* GMResult.h */,
+				E6695687184BE2DB00EDB7C7 /* GMResult.m */,
+				E6695688184BE2DB00EDB7C7 /* GMTrackInfo.h */,
+				E6695689184BE2DB00EDB7C7 /* GMTrackInfo.m */,
+				E669567F184BE2DB00EDB7C7 /* GMAPIClient+Protected.h */,
+				E6695680184BE2DB00EDB7C7 /* GMAPIClient+Protected.m */,
+				E6695681184BE2DB00EDB7C7 /* GMAPIClient.h */,
+				E6695682184BE2DB00EDB7C7 /* GMAPIClient.m */,
+				E669568B184BE2DB00EDB7C7 /* GMWebClient.h */,
+				E669568C184BE2DB00EDB7C7 /* GMWebClient.m */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -294,14 +314,14 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E66954F6184BBD3B00EDB7C7 /* GMTrackInfo.h in Headers */,
-				E66954EF184BBD2800EDB7C7 /* GMusicAPIClient.h in Headers */,
-				E66954F4184BBD3B00EDB7C7 /* GMAPIClient+Protected.h in Headers */,
-				E66954F1184BBD3B00EDB7C7 /* GMResult.h in Headers */,
-				E66954F5184BBD3B00EDB7C7 /* GMWebClient.h in Headers */,
-				E66954F3184BBD3B00EDB7C7 /* GMAPIClient.h in Headers */,
-				E66954F0184BBD3B00EDB7C7 /* GMLog.h in Headers */,
-				E66954F2184BBD3B00EDB7C7 /* GMCredentials.h in Headers */,
+				E66956A2184BE2DB00EDB7C7 /* GMTrackInfo.h in Headers */,
+				E6695692184BE2DB00EDB7C7 /* GMAPIClient.h in Headers */,
+				E66956A8184BE2DB00EDB7C7 /* GMWebClient.h in Headers */,
+				E669569C184BE2DB00EDB7C7 /* GMLog.h in Headers */,
+				E66956A7184BE2DB00EDB7C7 /* GMusicAPIClient.h in Headers */,
+				E669569D184BE2DB00EDB7C7 /* GMResult.h in Headers */,
+				E669568D184BE2DB00EDB7C7 /* GMAPIClient+Protected.h in Headers */,
+				E6695697184BE2DB00EDB7C7 /* GMCredentials.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,12 +454,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E6413A72184A6D1300D4D22B /* GMResult.m in Sources */,
-				E6413A77184ADD6400D4D22B /* GMTrackInfo.m in Sources */,
-				E6413A6E184A65A300D4D22B /* GMWebClient.m in Sources */,
-				E60F65F8184A61800033498D /* GMCredentials.m in Sources */,
-				E60F65FB184A62670033498D /* GMAPIClient+Protected.m in Sources */,
-				E60F65F5184A61560033498D /* GMAPIClient.m in Sources */,
+				E669569E184BE2DB00EDB7C7 /* GMResult.m in Sources */,
+				E66956A9184BE2DB00EDB7C7 /* GMWebClient.m in Sources */,
+				E669568E184BE2DB00EDB7C7 /* GMAPIClient+Protected.m in Sources */,
+				E6695698184BE2DB00EDB7C7 /* GMCredentials.m in Sources */,
+				E66956A3184BE2DB00EDB7C7 /* GMTrackInfo.m in Sources */,
+				E6695693184BE2DB00EDB7C7 /* GMAPIClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,6 +468,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6695578184BC98500EDB7C7 /* XCTestCase+AsyncTesting.m in Sources */,
+				E66956AA184BE2DB00EDB7C7 /* GMWebClient.m in Sources */,
+				E6695694184BE2DB00EDB7C7 /* GMAPIClient.m in Sources */,
+				E669569F184BE2DB00EDB7C7 /* GMResult.m in Sources */,
+				E66956A4184BE2DB00EDB7C7 /* GMTrackInfo.m in Sources */,
+				E6695699184BE2DB00EDB7C7 /* GMCredentials.m in Sources */,
+				E669568F184BE2DB00EDB7C7 /* GMAPIClient+Protected.m in Sources */,
 				E644552C184A48EE005D3CDC /* GMusicAPIClientTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -456,12 +482,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E66954E9184BBD0200EDB7C7 /* GMResult.m in Sources */,
-				E66954EA184BBD0200EDB7C7 /* GMCredentials.m in Sources */,
-				E66954EB184BBD0200EDB7C7 /* GMAPIClient.m in Sources */,
-				E66954EC184BBD0200EDB7C7 /* GMAPIClient+Protected.m in Sources */,
-				E66954ED184BBD0200EDB7C7 /* GMWebClient.m in Sources */,
-				E66954EE184BBD0200EDB7C7 /* GMTrackInfo.m in Sources */,
+				E66956A0184BE2DB00EDB7C7 /* GMResult.m in Sources */,
+				E66956AB184BE2DB00EDB7C7 /* GMWebClient.m in Sources */,
+				E6695690184BE2DB00EDB7C7 /* GMAPIClient+Protected.m in Sources */,
+				E669569A184BE2DB00EDB7C7 /* GMCredentials.m in Sources */,
+				E66956A5184BE2DB00EDB7C7 /* GMTrackInfo.m in Sources */,
+				E6695695184BE2DB00EDB7C7 /* GMAPIClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,6 +496,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6695579184BC98500EDB7C7 /* XCTestCase+AsyncTesting.m in Sources */,
+				E66956AC184BE2DB00EDB7C7 /* GMWebClient.m in Sources */,
+				E6695696184BE2DB00EDB7C7 /* GMAPIClient.m in Sources */,
+				E66956A1184BE2DB00EDB7C7 /* GMResult.m in Sources */,
+				E66956A6184BE2DB00EDB7C7 /* GMTrackInfo.m in Sources */,
+				E669569B184BE2DB00EDB7C7 /* GMCredentials.m in Sources */,
+				E6695691184BE2DB00EDB7C7 /* GMAPIClient+Protected.m in Sources */,
 				E66954E2184BBC8800EDB7C7 /* GMusicAPIClient_osxTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
