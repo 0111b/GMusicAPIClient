@@ -1,3 +1,4 @@
 language: objective-c
 xcode_project: GMusicAPIClient/GMusicAPIClient.xcodeproj
 xcode_scheme: GMusicAPIClient
+xcode_sdk: iphonesimulator
