@@ -41,15 +41,38 @@
                                     <action selector="loginTouched:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="huW-Ou-mi3"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Login" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cOJ-GB-hBc">
+                                <rect key="frame" x="75" y="175" width="170" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="170" id="mua-Sx-WR4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Password" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GtK-Ae-nDx">
+                                <rect key="frame" x="75" y="223" width="170" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="GtK-Ae-nDx" firstAttribute="top" secondItem="cOJ-GB-hBc" secondAttribute="bottom" constant="18" id="4AR-Kz-clE"/>
+                            <constraint firstItem="GtK-Ae-nDx" firstAttribute="width" secondItem="cOJ-GB-hBc" secondAttribute="width" id="5fV-87-biO"/>
                             <constraint firstAttribute="centerX" secondItem="d7X-6c-ydQ" secondAttribute="centerX" id="C1k-FU-KqW"/>
                             <constraint firstAttribute="centerY" secondItem="d7X-6c-ydQ" secondAttribute="centerY" id="QBA-am-ie7"/>
+                            <constraint firstAttribute="centerX" secondItem="cOJ-GB-hBc" secondAttribute="centerX" id="UP4-Ri-Ncz"/>
+                            <constraint firstItem="GtK-Ae-nDx" firstAttribute="leading" secondItem="cOJ-GB-hBc" secondAttribute="leading" id="XWa-Fd-DYr"/>
+                            <constraint firstItem="d7X-6c-ydQ" firstAttribute="top" secondItem="GtK-Ae-nDx" secondAttribute="bottom" constant="16" id="nNQ-HX-DTE"/>
+                            <constraint firstAttribute="centerX" secondItem="GtK-Ae-nDx" secondAttribute="centerX" id="nkI-uh-uec"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="oRB-jG-Gpa"/>
                     <connections>
+                        <outlet property="loginTextField" destination="cOJ-GB-hBc" id="6bb-AE-vS4"/>
+                        <outlet property="passwordTextField" destination="GtK-Ae-nDx" id="5Zc-QX-NJP"/>
                         <segue destination="WmB-mK-GgZ" kind="push" identifier="ShowPlaylistSegue" id="aUe-sB-awW"/>
                     </connections>
                 </viewController>

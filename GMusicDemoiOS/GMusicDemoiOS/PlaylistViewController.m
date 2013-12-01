@@ -51,7 +51,7 @@
     AVPlayerItem *playItem = [[AVPlayerItem alloc] initWithURL:url];
     [self.player replaceCurrentItemWithPlayerItem:playItem];
     [self.player play];
-    NSLog(@"player :%d",self.player.status);
+    NSLog(@"player status %d",self.player.status);
 }
 
 #pragma mark -
@@ -83,7 +83,7 @@
     GMTrackInfo *track = self.songList[indexPath.row];
     [[GMWebClient sharedInstance] streamURLForTrack:track
                                          completion:^(GMResult *result) {
-                                             NSLog(@"get all %d data %@",result.status, result.data);
+                                             NSLog(@"stream %d data %@",result.status, result.data);
                                              if ([result isValid]) {
                                                  [self playURL:result.data];
                                                  self.currentTrackLabel.text = [NSString stringWithFormat:@"%@ - %@",track.artist,track.title];
