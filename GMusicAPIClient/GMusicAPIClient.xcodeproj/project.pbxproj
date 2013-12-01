@@ -43,6 +43,8 @@
 		E66954F6184BBD3B00EDB7C7 /* GMTrackInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = E6413A75184ADD6400D4D22B /* GMTrackInfo.h */; };
 		E6695578184BC98500EDB7C7 /* XCTestCase+AsyncTesting.m in Sources */ = {isa = PBXBuildFile; fileRef = E6695577184BC98500EDB7C7 /* XCTestCase+AsyncTesting.m */; };
 		E6695579184BC98500EDB7C7 /* XCTestCase+AsyncTesting.m in Sources */ = {isa = PBXBuildFile; fileRef = E6695577184BC98500EDB7C7 /* XCTestCase+AsyncTesting.m */; };
+		E6695583184BD50700EDB7C7 /* user.plist in Resources */ = {isa = PBXBuildFile; fileRef = E6695582184BD50700EDB7C7 /* user.plist */; };
+		E6695584184BD50700EDB7C7 /* user.plist in Resources */ = {isa = PBXBuildFile; fileRef = E6695582184BD50700EDB7C7 /* user.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +113,7 @@
 		E66954E1184BBC8800EDB7C7 /* GMusicAPIClient_osxTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GMusicAPIClient_osxTests.m; sourceTree = "<group>"; };
 		E6695576184BC98500EDB7C7 /* XCTestCase+AsyncTesting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XCTestCase+AsyncTesting.h"; sourceTree = "<group>"; };
 		E6695577184BC98500EDB7C7 /* XCTestCase+AsyncTesting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "XCTestCase+AsyncTesting.m"; sourceTree = "<group>"; };
+		E6695582184BD50700EDB7C7 /* user.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = user.plist; path = ../../user.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,6 +225,7 @@
 		E6445525184A48EE005D3CDC /* GMusicAPIClientTests */ = {
 			isa = PBXGroup;
 			children = (
+				E6695582184BD50700EDB7C7 /* user.plist */,
 				E6695576184BC98500EDB7C7 /* XCTestCase+AsyncTesting.h */,
 				E6695577184BC98500EDB7C7 /* XCTestCase+AsyncTesting.m */,
 				E644552B184A48EE005D3CDC /* GMusicAPIClientTests.m */,
@@ -389,6 +393,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = E6445503184A48EE005D3CDC;
 			productRefGroup = E644550D184A48EE005D3CDC /* Products */;
@@ -409,6 +414,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E644552A184A48EE005D3CDC /* InfoPlist.strings in Resources */,
+				E6695583184BD50700EDB7C7 /* user.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,6 +423,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E66954E0184BBC8800EDB7C7 /* InfoPlist.strings in Resources */,
+				E6695584184BD50700EDB7C7 /* user.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

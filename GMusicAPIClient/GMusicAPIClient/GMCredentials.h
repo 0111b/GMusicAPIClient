@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface GMCredentials : NSObject
++ (instancetype)defaultCredentials;
 + (instancetype)credentialsWithUsername:(NSString *)uname password:(NSString *)password;
 @property (nonatomic, strong, readonly) NSString *username;
 @property (nonatomic, strong, readonly) NSString *password;

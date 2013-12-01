@@ -15,4 +15,14 @@
     credentials->_password = [pwd  stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     return credentials;
 }
+
++ (instancetype)defaultCredentials {
+    
+    NSURL *url = [[NSBundle mainBundle] URLForResource:@"user" withExtension:@"plist"];
+    NSDictionary *d = [NSDictionary dictionaryWithContentsOfURL:url];
+    NSString *username = d[@"username"];
+    NSString *password = d[@"password"];
+    
+    return [self credentialsWithUsername:username password:password];
+}
 @end

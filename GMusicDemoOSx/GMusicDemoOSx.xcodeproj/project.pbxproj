@@ -19,6 +19,7 @@
 		E669552C184BBDB100EDB7C7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E669552A184BBDB100EDB7C7 /* InfoPlist.strings */; };
 		E669552E184BBDB100EDB7C7 /* GMusicDemoOSxTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E669552D184BBDB100EDB7C7 /* GMusicDemoOSxTests.m */; };
 		E6695549184BBE0E00EDB7C7 /* libGMusicAPIClient-osx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E6695544184BBDF400EDB7C7 /* libGMusicAPIClient-osx.a */; };
+		E6695586184BD53E00EDB7C7 /* user.plist in Resources */ = {isa = PBXBuildFile; fileRef = E6695585184BD53E00EDB7C7 /* user.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		E669552B184BBDB100EDB7C7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E669552D184BBDB100EDB7C7 /* GMusicDemoOSxTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GMusicDemoOSxTests.m; sourceTree = "<group>"; };
 		E6695538184BBDF400EDB7C7 /* GMusicAPIClient.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GMusicAPIClient.xcodeproj; path = ../GMusicAPIClient/GMusicAPIClient.xcodeproj; sourceTree = "<group>"; };
+		E6695585184BD53E00EDB7C7 /* user.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = user.plist; path = ../../user.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 		E6695509184BBDB100EDB7C7 /* GMusicDemoOSx */ = {
 			isa = PBXGroup;
 			children = (
+				E6695585184BD53E00EDB7C7 /* user.plist */,
 				E6695515184BBDB100EDB7C7 /* AppDelegate.h */,
 				E6695516184BBDB100EDB7C7 /* AppDelegate.m */,
 				E6695518184BBDB100EDB7C7 /* MainMenu.xib */,
@@ -310,6 +313,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6695586184BD53E00EDB7C7 /* user.plist in Resources */,
 				E669550E184BBDB100EDB7C7 /* InfoPlist.strings in Resources */,
 				E669551C184BBDB100EDB7C7 /* Images.xcassets in Resources */,
 				E6695514184BBDB100EDB7C7 /* Credits.rtf in Resources */,

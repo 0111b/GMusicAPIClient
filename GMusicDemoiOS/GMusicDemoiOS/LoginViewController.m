@@ -30,10 +30,8 @@
 }
 
 - (IBAction)loginTouched:(id)sender {
-    NSString *username = @"username";
-    NSString *password = @"thyifbvzvwkmngyc";
-    
-    [[GMWebClient sharedInstance] loginWithCredentials:[GMCredentials credentialsWithUsername:username password:password] completion:^(GMResult *result) {
+    GMCredentials *credentials = [GMCredentials defaultCredentials];
+    [[GMWebClient sharedInstance] loginWithCredentials:credentials completion:^(GMResult *result) {
         NSLog(@"Login %d",result.status);
         if ([result isValid]) {
             [self performSegueWithIdentifier:@"ShowPlaylistSegue" sender:self];

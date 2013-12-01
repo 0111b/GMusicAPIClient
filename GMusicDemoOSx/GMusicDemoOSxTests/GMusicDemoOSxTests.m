@@ -26,9 +26,12 @@
     [super tearDown];
 }
 
-- (void)testExample
-{
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+- (void)testDefaultCredentials {
+    NSURL *url = [[NSBundle mainBundle] URLForResource:@"user" withExtension:@"plist"];
+    XCTAssertNotNil(url, @"error locating credentials");
+    NSDictionary *d = [NSDictionary dictionaryWithContentsOfURL:url];
+    XCTAssertNotNil(d[@"username" ], @"parsing error");
+    XCTAssertNotNil(d[@"password"], @"parsing error");
 }
 
 @end
