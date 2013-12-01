@@ -34,9 +34,8 @@
     }
     
     if (!crendetials.username.length || !crendetials.password.length) {
-        if (completion) {
-            completion([GMResult resultWithStatus:GMStatusInvalidArg error:nil]);
-        }
+        [self executeCompletion:completion
+                     withResult:[GMResult resultWithStatus:GMStatusInvalidArg error:nil]];
         return;
     }
     

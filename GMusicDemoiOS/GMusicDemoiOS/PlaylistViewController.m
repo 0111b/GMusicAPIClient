@@ -28,7 +28,7 @@
     
     self.player = [[AVPlayer alloc] init];
     self.player.allowsExternalPlayback = YES;
-
+    [self refreshTouched:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -39,7 +39,7 @@
 
 - (IBAction)refreshTouched:(id)sender {
     [[GMWebClient sharedInstance] allSongsWithCompletion:^(GMResult *result) {
-        NSLog(@"get all %lu count %lu",result.status, (unsigned long)[result.data count]);
+        NSLog(@"get all %lu count %lu",(unsigned long)result.status, (unsigned long)[result.data count]);
         if ([result isValid]) {
             self.songList = result.data;
             [self.songListTable reloadData];
@@ -83,7 +83,7 @@
     GMTrackInfo *track = self.songList[indexPath.row];
     [[GMWebClient sharedInstance] streamURLForTrack:track
                                          completion:^(GMResult *result) {
-                                             NSLog(@"stream %lu data %@",result.status, result.data);
+                                             NSLog(@"stream %lu data %@",(unsigned long)result.status, result.data);
                                              if ([result isValid]) {
                                                  [self playURL:result.data];
                                                  self.currentTrackLabel.text = [NSString stringWithFormat:@"%@ - %@",track.artist,track.title];
