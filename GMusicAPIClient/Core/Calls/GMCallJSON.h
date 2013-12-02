@@ -9,5 +9,5 @@
 #import "GMCall.h"
 
 @interface GMCallJSON : GMCall
-- (GMResult *)processJSON:(id)json;
+- (GMResult *)processJSON:(id)json withResponse:(NSURLResponse *)response;
 @end

@@ -17,7 +17,7 @@
     return request;
 }
 
-- (GMResult *)processJSON:(id)json {
+- (GMResult *)processJSON:(id)json withResponse:(NSURLResponse *)response {
     NSString *urlString = json[@"url"];
     if (urlString) {
         return [GMResult resultWithData:[NSURL URLWithString:urlString]];

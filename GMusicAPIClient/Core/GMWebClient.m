@@ -7,13 +7,11 @@
 //
 
 #import "GMWebClient.h"
-//TODO: remove
-#import "GMTrackInfo.h"
-
 
 #import "GMCallListPlaylists.h"
 #import "GMCallStreamURLForTrack.h"
 #import "GMCallAllSongs.h"
+#import "GMCallWebclientLogin.h"
 
 @interface GMWebClient () <NSURLSessionDelegate>
 @end
@@ -21,10 +19,7 @@
 @implementation GMWebClient
 - (instancetype) initUniqueInstance {
     self = [super initUniqueInstance];
-    if (self) {
-        
-        self.tokens = [GMSessionTokens new];
-        
+    if (self) {        
         NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
         configuration.allowsCellularAccess = NO;
         self.session = [NSURLSession sessionWithConfiguration:configuration delegate:self delegateQueue:self.operationQueue];
@@ -34,90 +29,8 @@
 
 #pragma mark -
 
-- (void)loginWithCredentials:(GMCredentials *)crendetials
-                  completion:(GMCompletionBlock)completion {
-    if ([self isAuthenticated]) {
-        [self logout];
-    }
-    
-    if (!crendetials.username.length || !crendetials.password.length) {
-        [self executeCompletion:completion
-                     withResult:[GMResult resultWithStatus:GMStatusInvalidArg error:nil]];
-        return;
-    }
-    
-    self.credentials = crendetials;
-    __weak typeof(*&self)weakself = self;
-
-    void (^xtCompletion)(NSData *, NSURLResponse *, NSError *) = ^(NSData *data, NSURLResponse *response, NSError *error) {
-        GMResult *result = nil;
-        if (error) {
-            result = [GMResult resultWithStatus:GMStatusNetworkError error:error];
-        } else {
-            NSHTTPCookieStorage *cookieStorage = weakself.session.configuration.HTTPCookieStorage;
-            for (NSHTTPCookie *cookie in [cookieStorage cookies]) {
-                if ([[cookie name] isEqualToString:@"xt"]) {
-                    weakself.tokens.xtToken = [cookie value];
-                    GMLog(@"xtToken %@",weakself.tokens.xtToken);
-                    break;
-                }
-            }
-            result = [weakself isAuthenticated]?[GMResult resultDone]:[GMResult resultWithStatus:GMStatusParseError error:nil];
-        }
-        [self executeCompletion:completion withResult:result];
-    };
-    
-    void (^authCompletion)(NSData *, NSURLResponse *, NSError *) = ^(NSData *data, NSURLResponse *response, NSError *error) {
-        GMResult *result = nil;
-        if (error) {
-            result = [GMResult resultWithStatus:GMStatusNetworkError error:error];
-        } else {
-            NSString *string = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-            if (![self.tokens fillWithAuthString:string]) {
-                result = [GMResult resultWithStatus:GMStatusParseError error:nil];
-            } else {
-                GMLog(@"authToken : %@", self.tokens.authToken);
-                [[weakself.session dataTaskWithRequest:[weakself xtRequest] completionHandler:xtCompletion] resume];
-            }
-        }
-        if (result) {
-            [self executeCompletion:completion withResult:result];
-        }
-    };
-    
-    
-    [[self.session dataTaskWithRequest:[self authRequest] completionHandler:authCompletion] resume];
-    
-}
-
-- (void)logout {
-    self.credentials = nil;
-    self.tokens = nil;
-}
-
 - (BOOL)isAuthenticated {
     return self.tokens.authToken.length && self.tokens.xtToken.length && self.credentials;
-}
-
-#pragma mark -
-- (NSURLRequest *)authRequest {
-    NSString *postString = [NSString stringWithFormat:@"&Email=%@&Passwd=%@&service=sj",self.credentials.username,self.credentials.password];
-    NSData *postData = [postString dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://www.google.com/accounts/ClientLogin"]]];
-    [request setHTTPMethod:@"POST"];
-    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-    [request setHTTPBody:postData];
-    return request;
-}
-
-- (NSURLRequest *)xtRequest {
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://play.google.com/music/listen?u=0"]]];
-    [request setHTTPMethod:@"POST"];
-    [request setValue:[NSString stringWithFormat:@"GoogleLogin auth=%@",self.tokens.authToken] forHTTPHeaderField:@"Authorization"];
-    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-    return request;
 }
 
 #pragma mark -
@@ -134,9 +47,56 @@
 
 #pragma mark -
 
+- (void)loginWithCredentials:(GMCredentials *)crendetials
+                  completion:(GMCompletionBlock)completion {
+    if (!crendetials.username.length || !crendetials.password.length) {
+        [self executeCompletion:completion withResult:[GMResult resultWithStatus:GMStatusInvalidArg]];
+    }
+    
+    if ([self isAuthenticated]) {
+        [self logout];
+        self.tokens = [GMSessionTokens new];
+    }
+    self.credentials = crendetials;
+    __weak typeof(*&self)weakself = self;
+    
+    GMCompletionBlock xtCompletion = ^(GMResult *result) {
+        if (![result isValid]) {
+           [weakself executeCompletion:completion withResult:result];
+            return ;
+        }
+        NSHTTPCookieStorage *cookieStorage = weakself.session.configuration.HTTPCookieStorage;
+        for (NSHTTPCookie *cookie in [cookieStorage cookies]) {
+            if ([[cookie name] isEqualToString:@"xt"]) {
+                weakself.tokens.xtToken = [cookie value];
+                GMLog(@"xtToken %@",weakself.tokens.xtToken);
+                break;
+            }
+        }
+        GMResult *finalResult = [weakself isAuthenticated]?[GMResult resultDone]:[GMResult resultWithStatus:GMStatusParseError];
+        [weakself executeCompletion:completion withResult:finalResult];
+    };
+    
+    GMCallWebclientLogin *authCall = [[GMCallWebclientLogin alloc] initWithTokens:self.tokens];
+    authCall.credentials = crendetials;
+    GMCompletionBlock authCompletion = ^(GMResult *result) {
+        if (![result isValid]) {
+            [weakself executeCompletion:completion withResult:result];
+            return;
+        }
+        
+        if (![weakself.tokens fillWithAuthString:result.data]) {
+            [weakself executeCompletion:completion withResult:[GMResult resultWithStatus:GMStatusParseError]];
+            return;
+        }
+                    
+        GMCallWebclientXT *xtCall = [[GMCallWebclientXT alloc] initWithTokens:weakself.tokens];
+        [weakself executeCallWithoutAuth:xtCall withCompletion:xtCompletion];
+    };
+    [weakself executeCallWithoutAuth:authCall withCompletion:authCompletion];
+}
 
 - (void)allSongsWithCompletion:(GMCompletionBlock)completion {
-    
     GMCallAllSongs *call = [[GMCallAllSongs alloc] initWithTokens:self.tokens];
     [self executeCall:call withCompletion:completion];    
 }

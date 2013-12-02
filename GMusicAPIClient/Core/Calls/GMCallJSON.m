@@ -10,17 +10,17 @@
 
 @implementation GMCallJSON
 
-- (GMResult *)processData:(NSData *)data {
+- (GMResult *)processData:(NSData *)data withResponse:(NSURLResponse *)response {
     NSError *parseError = nil;
     id json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&parseError];
     if (parseError) {
         return   [GMResult resultWithStatus:GMStatusParseError error:parseError];
     } else {
-        return [self processJSON:json];
+        return [self processJSON:json withResponse:response];
     }
 }
 
-- (GMResult *)processJSON:(id)json {
+- (GMResult *)processJSON:(id)json withResponse:(NSURLResponse *)response {
     return [GMResult resultWithData:json];
 }
 @end

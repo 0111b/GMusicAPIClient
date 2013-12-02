@@ -22,6 +22,7 @@
 @property (nonatomic, strong) GMCredentials *credentials;
 
 - (void)executeCall:(GMCall *)call withCompletion:(GMCompletionBlock)completion;
+- (void)executeCallWithoutAuth:(GMCall *)call withCompletion:(GMCompletionBlock)completion;
 - (void)executeCompletion:(GMCompletionBlock)completion withResult:(GMResult *)result;
 @end
 

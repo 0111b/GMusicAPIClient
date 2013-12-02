@@ -13,7 +13,7 @@
 @interface GMCall : NSObject
 - (id)initWithTokens:(GMSessionTokens *)tokens;
 - (NSMutableURLRequest *)request;
-- (GMResult *)processData:(NSData *)data;
+- (GMResult *)processData:(NSData *)data withResponse:(NSURLResponse *)response;
 
 @property (nonatomic, strong, readonly) GMSessionTokens *usedTokens;
 @end

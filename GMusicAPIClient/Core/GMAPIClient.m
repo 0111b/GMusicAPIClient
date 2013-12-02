@@ -29,13 +29,15 @@
         self.operationQueue = [[NSOperationQueue alloc] init];
         [self.operationQueue setName:@"com.gmusicapi.processing"];
         self.operationQueue.maxConcurrentOperationCount = NSOperationQueueDefaultMaxConcurrentOperationCount;
+        
+        self.tokens = [GMSessionTokens new];
     }
     return self;
 }
 
 - (void)dealloc {
-    [self.session invalidateAndCancel];
     [self logout];
+    [self.session invalidateAndCancel];
 }
 
 - (void)executeCompletion:(GMCompletionBlock)completion withResult:(GMResult *)result {
@@ -46,20 +48,29 @@
     }
 }
 
+- (void)executeCallWithoutAuth:(GMCall *)call withCompletion:(GMCompletionBlock)completion {
+    [self executeCall:call withCompletion:completion needAuth:NO];
+}
+
 - (void)executeCall:(GMCall *)call withCompletion:(GMCompletionBlock)completion {
-    if (![self isAuthenticated]) {
+    [self executeCall:call withCompletion:completion needAuth:YES];
+}
+
+- (void)executeCall:(GMCall *)call withCompletion:(GMCompletionBlock)completion needAuth:(BOOL)needAuth {
+    //TODO: add error checking
+    if (needAuth && ![self isAuthenticated]) {
         [self executeCompletion:completion withResult:[GMResult resultWithStatus:GMStatusInvalidCredentials]];
         return;
     }
     
     NSMutableURLRequest *request = call.request;
-    
+    //TODO: send response
     void (^requestCompletion)(NSData *, NSURLResponse *, NSError *) = ^(NSData *data, NSURLResponse *response, NSError *error) {
         GMResult *result = nil;
         if (error) {
             result = [GMResult resultWithStatus:GMStatusNetworkError error:error];
         } else {
-            result = [call processData:data];
+            result = [call processData:data withResponse:response];
         }
         if (result) {
             [self executeCompletion:completion withResult:result];
@@ -85,6 +96,7 @@
     return NO;
 }
 - (void)logout {
-    
+    self.credentials = nil;
+    self.tokens = nil;    
 }
 @end

@@ -34,6 +34,8 @@
 		E632E96C184D264D000A20C5 /* GMCallStreamURLForTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = E632E94B184D16A4000A20C5 /* GMCallStreamURLForTrack.m */; };
 		E632E96D184D2650000A20C5 /* GMCallAllSongs.h in Headers */ = {isa = PBXBuildFile; fileRef = E632E950184D19BB000A20C5 /* GMCallAllSongs.h */; };
 		E632E96E184D2654000A20C5 /* GMCallAllSongs.m in Sources */ = {isa = PBXBuildFile; fileRef = E632E951184D19BB000A20C5 /* GMCallAllSongs.m */; };
+		E632E971184D34C2000A20C5 /* GMCallBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = E632E970184D34C2000A20C5 /* GMCallBlock.m */; };
+		E632E974184D36C6000A20C5 /* GMCallWebclientLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = E632E973184D36C6000A20C5 /* GMCallWebclientLogin.m */; };
 		E6445510184A48EE005D3CDC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E644550F184A48EE005D3CDC /* Foundation.framework */; };
 		E644551E184A48EE005D3CDC /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E644551D184A48EE005D3CDC /* XCTest.framework */; };
 		E644551F184A48EE005D3CDC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E644550F184A48EE005D3CDC /* Foundation.framework */; };
@@ -130,6 +132,10 @@
 		E632E958184D1E92000A20C5 /* GMPlaylistInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMPlaylistInfo.m; sourceTree = "<group>"; };
 		E632E95A184D1F0B000A20C5 /* GMMappingItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMMappingItem.h; sourceTree = "<group>"; };
 		E632E95B184D1F0B000A20C5 /* GMMappingItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMMappingItem.m; sourceTree = "<group>"; };
+		E632E96F184D34C2000A20C5 /* GMCallBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMCallBlock.h; sourceTree = "<group>"; };
+		E632E970184D34C2000A20C5 /* GMCallBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMCallBlock.m; sourceTree = "<group>"; };
+		E632E972184D36C6000A20C5 /* GMCallWebclientLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMCallWebclientLogin.h; sourceTree = "<group>"; };
+		E632E973184D36C6000A20C5 /* GMCallWebclientLogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMCallWebclientLogin.m; sourceTree = "<group>"; };
 		E644550C184A48EE005D3CDC /* libGMusicAPIClient-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libGMusicAPIClient-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E644550F184A48EE005D3CDC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E6445513184A48EE005D3CDC /* GMusicAPIClient-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GMusicAPIClient-Prefix.pch"; sourceTree = "<group>"; };
@@ -214,12 +220,16 @@
 				E632E944184D0E92000A20C5 /* GMCall.m */,
 				E632E94D184D186D000A20C5 /* GMCallJSON.h */,
 				E632E94E184D186D000A20C5 /* GMCallJSON.m */,
+				E632E96F184D34C2000A20C5 /* GMCallBlock.h */,
+				E632E970184D34C2000A20C5 /* GMCallBlock.m */,
 				E632E946184D10B7000A20C5 /* GMCallListPlaylists.h */,
 				E632E947184D10B7000A20C5 /* GMCallListPlaylists.m */,
 				E632E94A184D16A4000A20C5 /* GMCallStreamURLForTrack.h */,
 				E632E94B184D16A4000A20C5 /* GMCallStreamURLForTrack.m */,
 				E632E950184D19BB000A20C5 /* GMCallAllSongs.h */,
 				E632E951184D19BB000A20C5 /* GMCallAllSongs.m */,
+				E632E972184D36C6000A20C5 /* GMCallWebclientLogin.h */,
+				E632E973184D36C6000A20C5 /* GMCallWebclientLogin.m */,
 			);
 			path = Calls;
 			sourceTree = "<group>";
@@ -539,12 +549,14 @@
 				E669568E184BE2DB00EDB7C7 /* GMAPIClient+Protected.m in Sources */,
 				E632E94C184D16A4000A20C5 /* GMCallStreamURLForTrack.m in Sources */,
 				E632E945184D0E92000A20C5 /* GMCall.m in Sources */,
+				E632E974184D36C6000A20C5 /* GMCallWebclientLogin.m in Sources */,
 				E6695698184BE2DB00EDB7C7 /* GMCredentials.m in Sources */,
 				E632E941184D0777000A20C5 /* GMSessionTokens.m in Sources */,
 				E6695693184BE2DB00EDB7C7 /* GMAPIClient.m in Sources */,
 				E632E948184D10B7000A20C5 /* GMCallListPlaylists.m in Sources */,
 				E632E959184D1E92000A20C5 /* GMPlaylistInfo.m in Sources */,
 				E632E94F184D186D000A20C5 /* GMCallJSON.m in Sources */,
+				E632E971184D34C2000A20C5 /* GMCallBlock.m in Sources */,
 				E632E95C184D1F0B000A20C5 /* GMMappingItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

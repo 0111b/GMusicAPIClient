@@ -20,7 +20,7 @@
     return request;
 }
 
-- (GMResult *)processJSON:(id)json {
+- (GMResult *)processJSON:(id)json withResponse:(NSURLResponse *)response {
     NSArray *rawArray = [json valueForKeyPath:@"data.items"];
     NSMutableArray *itemsArray = [[NSMutableArray alloc] initWithCapacity:[rawArray count]];
     for (NSDictionary *rawItem in rawArray) {

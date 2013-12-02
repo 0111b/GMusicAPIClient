@@ -18,7 +18,7 @@
     return request;
 }
 
-- (GMResult *)processJSON:(id)json {
+- (GMResult *)processJSON:(id)json withResponse:(NSURLResponse *)response {
     NSArray *rawArray = json[@"playlist"];
     NSMutableArray *songsArray = [[NSMutableArray alloc] initWithCapacity:[rawArray count]];
     for (NSDictionary *rawSong in rawArray) {

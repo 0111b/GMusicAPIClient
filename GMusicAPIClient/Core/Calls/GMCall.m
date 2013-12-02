@@ -17,7 +17,7 @@
     if (self = [super init]) {
         self->_usedTokens = tokens;
         self.callRequest = [[NSMutableURLRequest alloc] init];
-        if (tokens) {
+        if (tokens.authToken) {
             [self.callRequest setValue:[NSString stringWithFormat:@"GoogleLogin auth=%@",tokens.authToken] forHTTPHeaderField:@"Authorization"];
         }
     }
@@ -28,8 +28,8 @@
     return self.callRequest;
 }
 
-- (GMResult *)processData:(NSData *)data {
-    return [GMResult resultWithData:data];
+- (GMResult *)processData:(NSData *)data withResponse:(NSURLResponse *)response {
+    return [GMResult resultWithStatus:GMStatusConsistencyError];
 }
 
 @end
