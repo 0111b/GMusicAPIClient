@@ -14,6 +14,14 @@
 
 @end
 
+BOOL isTravis() {
+    char *travis = getenv("TRAVIS");
+    return (travis && (strcmp(travis, "YES") == 0));
+}
+
+#define GM_DISABLE_ON_TRAVIS if(isTravis()) return
+
+
 GMCredentials *testCredentials() {
     NSURL *url = [NSURL URLWithString:@"user.plist" relativeToURL:[[NSBundle bundleForClass:[GMusicAPIClientTests class]] resourceURL]];
     NSDictionary *d = [NSDictionary dictionaryWithContentsOfURL:url];
@@ -46,6 +54,7 @@ GMCredentials *testCredentials() {
 }
 
 - (void)test3Login {
+    GM_DISABLE_ON_TRAVIS;
     [[GMWebClient sharedInstance] loginWithCredentials:testCredentials()
                                             completion:^(GMResult *result) {
                                                 if ([result isValid]) {
@@ -59,6 +68,7 @@ GMCredentials *testCredentials() {
 }
 
 - (void)test4ListOfUserPlaylist {
+    GM_DISABLE_ON_TRAVIS;
     [[GMWebClient sharedInstance] listOfUserPlaylists:^(GMResult *result) {
                                                 if ([result isValid]) {
                                                     NSLog(@"data:%@",result.data);
