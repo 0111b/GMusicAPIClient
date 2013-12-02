@@ -8,8 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "GMResult.h"
+
 @class GMCredentials;
-@class GMTrackInfo;
 
 @interface GMAPIClient : NSObject
 
@@ -21,6 +21,7 @@
 -(instancetype) init __attribute__((unavailable("init not available, call sharedInstance instead")));
 +(instancetype) new __attribute__((unavailable("new not available, call sharedInstance instead")));
 
+
 #pragma mark -
 
 - (void)loginWithCredentials:(GMCredentials *)crendetials completion:(GMCompletionBlock)completion;
@@ -28,5 +29,5 @@
 - (void)logout;
 
 - (void)allSongsWithCompletion:(GMCompletionBlock)completion;
-- (void)streamURLForTrack:(GMTrackInfo *)track completion:(GMCompletionBlock)completion;
+- (void)streamURLForTrackId:(NSString *)trackId completion:(GMCompletionBlock)completion;
 @end

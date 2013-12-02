@@ -9,5 +9,5 @@
 #import "GMAPIClient+Protected.h"
 
 @interface GMWebClient : GMAPIClient
-
+- (void)listOfUserPlaylists:(GMCompletionBlock)completion;
 @end

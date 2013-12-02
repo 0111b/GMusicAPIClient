@@ -14,6 +14,13 @@
 
 @end
 
+GMCredentials *testCredentials() {
+    NSURL *url = [NSURL URLWithString:@"user.plist" relativeToURL:[[NSBundle bundleForClass:[GMusicAPIClientTests class]] resourceURL]];
+    NSDictionary *d = [NSDictionary dictionaryWithContentsOfURL:url];
+    return [GMCredentials credentialsWithUsername:d[@"username" ]
+                                         password:d[@"password"]];
+}
+
 @implementation GMusicAPIClientTests
 
 - (void)setUp
@@ -28,17 +35,39 @@
     [super tearDown];
 }
 
-- (void)testDefaultCredentials {
-    NSURL *url = [NSURL URLWithString:@"user.plist" relativeToURL:[[NSBundle bundleForClass:[self class]] resourceURL]];
-    XCTAssertNotNil(url, @"error locating credentials");
-    NSDictionary *d = [NSDictionary dictionaryWithContentsOfURL:url];
-    XCTAssertNotNil(d[@"username" ], @"parsing error");
-    XCTAssertNotNil(d[@"password"], @"parsing error");
+- (void)test1DefaultCredentialsLocation {
+    GMCredentials *credentials = testCredentials();
+    XCTAssertNotNil(credentials.username, @"parsing error");
+    XCTAssertNotNil(credentials.password, @"parsing error");
 }
 
-- (void)testWebClientInit {
+- (void)test2WebClientInit {
     XCTAssertNotNil([GMWebClient sharedInstance], @"Error creating singleton");
 }
 
+- (void)test3Login {
+    [[GMWebClient sharedInstance] loginWithCredentials:testCredentials()
+                                            completion:^(GMResult *result) {
+                                                if ([result isValid]) {
+                                                    [self notify:XCTAsyncTestCaseStatusSucceeded];
+                                                } else {
+                                                    [self notify:XCTAsyncTestCaseStatusFailed];
+                                                }
+                                            }];
+    [self waitForStatus:XCTAsyncTestCaseStatusSucceeded timeout:5.];
+    XCTAssertTrue([[GMWebClient sharedInstance] isAuthenticated], @"invalid auth status");
+}
+
+- (void)test4ListOfUserPlaylist {
+    [[GMWebClient sharedInstance] listOfUserPlaylists:^(GMResult *result) {
+                                                if ([result isValid]) {
+                                                    NSLog(@"data:%@",result.data);
+                                                    [self notify:XCTAsyncTestCaseStatusSucceeded];
+                                                } else {
+                                                    [self notify:XCTAsyncTestCaseStatusFailed];
+                                                }
+                                            }];
+    [self waitForStatus:XCTAsyncTestCaseStatusSucceeded timeout:5.];
+}
 
 @end

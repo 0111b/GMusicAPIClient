@@ -81,7 +81,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath  animated:YES];
     GMTrackInfo *track = self.songList[indexPath.row];
-    [[GMWebClient sharedInstance] streamURLForTrack:track
+    [[GMWebClient sharedInstance] streamURLForTrackId:track.itemID
                                          completion:^(GMResult *result) {
                                              NSLog(@"stream %lu data %@",(unsigned long)result.status, result.data);
                                              if ([result isValid]) {

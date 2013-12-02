@@ -7,17 +7,24 @@
 //
 
 #import "GMWebClient.h"
+//TODO: remove
 #import "GMTrackInfo.h"
 
+
+#import "GMCallListPlaylists.h"
+#import "GMCallStreamURLForTrack.h"
+#import "GMCallAllSongs.h"
+
 @interface GMWebClient () <NSURLSessionDelegate>
-@property (nonatomic, strong) NSString *authToken;
-@property (nonatomic, strong) NSString *xtToken;
 @end
 
 @implementation GMWebClient
 - (instancetype) initUniqueInstance {
     self = [super initUniqueInstance];
     if (self) {
+        
+        self.tokens = [GMSessionTokens new];
+        
         NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
         configuration.allowsCellularAccess = NO;
         self.session = [NSURLSession sessionWithConfiguration:configuration delegate:self delegateQueue:self.operationQueue];
@@ -50,8 +57,8 @@
             NSHTTPCookieStorage *cookieStorage = weakself.session.configuration.HTTPCookieStorage;
             for (NSHTTPCookie *cookie in [cookieStorage cookies]) {
                 if ([[cookie name] isEqualToString:@"xt"]) {
-                    weakself.xtToken = [cookie value];
-                    GMLog(@"xtToken %@",weakself.xtToken);
+                    weakself.tokens.xtToken = [cookie value];
+                    GMLog(@"xtToken %@",weakself.tokens.xtToken);
                     break;
                 }
             }
@@ -66,15 +73,10 @@
             result = [GMResult resultWithStatus:GMStatusNetworkError error:error];
         } else {
             NSString *string = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-            NSArray *respArray = [string componentsSeparatedByString:@"\n"];
-            if ([respArray count] <3) {
+            if (![self.tokens fillWithAuthString:string]) {
                 result = [GMResult resultWithStatus:GMStatusParseError error:nil];
             } else {
-                string = [respArray objectAtIndex:2];
-                string = [string stringByReplacingOccurrencesOfString:@"Auth=" withString:@""];
-                //NSLog(response);
-                weakself.authToken = string;
-                GMLog(@"authToken : %@", self.authToken);
+                GMLog(@"authToken : %@", self.tokens.authToken);
                 [[weakself.session dataTaskWithRequest:[weakself xtRequest] completionHandler:xtCompletion] resume];
             }
         }
@@ -90,12 +92,11 @@
 
 - (void)logout {
     self.credentials = nil;
-    self.authToken = nil;
-    self.xtToken = nil;
+    self.tokens = nil;
 }
 
 - (BOOL)isAuthenticated {
-    return self.authToken.length && self.xtToken.length && self.credentials;
+    return self.tokens.authToken.length && self.tokens.xtToken.length && self.credentials;
 }
 
 #pragma mark -
@@ -114,7 +115,7 @@
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://play.google.com/music/listen?u=0"]]];
     [request setHTTPMethod:@"POST"];
-    [request setValue:[NSString stringWithFormat:@"GoogleLogin auth=%@",self.authToken] forHTTPHeaderField:@"Authorization"];
+    [request setValue:[NSString stringWithFormat:@"GoogleLogin auth=%@",self.tokens.authToken] forHTTPHeaderField:@"Authorization"];
     [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
     return request;
 }
@@ -135,75 +136,20 @@
 
 
 - (void)allSongsWithCompletion:(GMCompletionBlock)completion {
-    if (![self isAuthenticated]) {
-        [self executeCompletion:completion withResult:[GMResult resultWithStatus:GMStatusInvalidCredentials]];
-        return;
-    }
     
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://play.google.com/music/services/loadalltracks?u=0&xt=%@",self.xtToken]]];
-    [request setHTTPMethod:@"POST"];
-    [request setValue:[NSString stringWithFormat:@"GoogleLogin auth=%@",self.authToken] forHTTPHeaderField:@"Authorization"];
-    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-    
-    
-    void (^requestCompletion)(NSData *, NSURLResponse *, NSError *) = ^(NSData *data, NSURLResponse *response, NSError *error) {
-        GMResult *result = nil;
-        if (error) {
-            result = [GMResult resultWithStatus:GMStatusNetworkError error:error];
-        } else {
-            NSError *parseError = nil;
-            NSDictionary *songsDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&parseError];
-            if (parseError) {
-                result = [GMResult resultWithStatus:GMStatusParseError error:parseError];
-            } else {
-                NSArray *rawArray = songsDictionary[@"playlist"];
-                NSMutableArray *songsArray = [[NSMutableArray alloc] initWithCapacity:[songsDictionary count]];
-                for (NSDictionary *rawSong in rawArray) {
-                    GMTrackInfo *track = [[GMTrackInfo alloc] initWithDictionary:rawSong];
-                    [songsArray addObject:track];
-                }
-                result = [GMResult resultWithData:songsArray];
-            }
-        }
-        if (result) {
-            [self executeCompletion:completion withResult:result];
-        }
-    };
-    [[self.session dataTaskWithRequest:request completionHandler:requestCompletion] resume];
+    GMCallAllSongs *call = [[GMCallAllSongs alloc] initWithTokens:self.tokens];
+    [self executeCall:call withCompletion:completion];    
 }
 
-- (void)streamURLForTrack:(GMTrackInfo *)track completion:(GMCompletionBlock)completion {
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://play.google.com/music/play?u=0&songid=%@&pt=e",track.trackID]]];
-    [request setHTTPMethod:@"GET"];
-    [request setValue:[NSString stringWithFormat:@"GoogleLogin auth=%@",self.authToken] forHTTPHeaderField:@"Authorization"];
-    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-    
-    void (^requestCompletion)(NSData *, NSURLResponse *, NSError *) = ^(NSData *data, NSURLResponse *response, NSError *error) {
-        GMResult *result = nil;
-        if (error) {
-            result = [GMResult resultWithStatus:GMStatusNetworkError error:error];
-        } else {
-            NSError *parseError = nil;
-            NSDictionary *urlDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&parseError];
-            if (parseError) {
-                result = [GMResult resultWithStatus:GMStatusParseError error:parseError];
-            } else {
-                NSString *urlString = urlDictionary[@"url"];
-                if (urlString) {
-                    result = [GMResult resultWithData:[NSURL URLWithString:urlString]];
-                } else {
-                    result = [GMResult resultWithStatus:GMStatusParseError];
-                }
-            }
-        }
-        if (result) {
-            [self executeCompletion:completion withResult:result];
-        }
-    };
-    
-    [[self.session dataTaskWithRequest:request completionHandler:requestCompletion] resume];
+- (void)streamURLForTrackId:(NSString *)trackId completion:(GMCompletionBlock)completion {
+    GMCallStreamURLForTrack *call = [[GMCallStreamURLForTrack alloc] initWithTokens:self.tokens];
+    call.trackId = trackId;
+    [self executeCall:call withCompletion:completion];
+}
+
+- (void)listOfUserPlaylists:(GMCompletionBlock)completion {
+    GMCall *call = [[GMCallListPlaylists alloc] initWithTokens:self.tokens];
+    [self executeCall:call withCompletion:completion];
 }
 
 @end

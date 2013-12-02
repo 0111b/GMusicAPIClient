@@ -8,6 +8,8 @@
 
 #import "GMAPIClient.h"
 #import "GMCredentials.h"
+#import "GMSessionTokens.h"
+#import "GMCall.h"
 
 @interface GMAPIClient ()
 
@@ -15,8 +17,11 @@
 
 @property (nonatomic, strong) NSURLSession *session;
 @property (nonatomic, strong) NSOperationQueue *operationQueue;
+@property (nonatomic, strong) GMSessionTokens *tokens;
 
 @property (nonatomic, strong) GMCredentials *credentials;
+
+- (void)executeCall:(GMCall *)call withCompletion:(GMCompletionBlock)completion;
 - (void)executeCompletion:(GMCompletionBlock)completion withResult:(GMResult *)result;
 @end
 

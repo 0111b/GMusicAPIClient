@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "GMMappingItem.h"
 /*
  
  {
@@ -56,10 +57,8 @@
 
 
 
-@interface GMTrackInfo : NSObject
-- (instancetype)initWithDictionary:(NSDictionary *)dictionary;
+@interface GMTrackInfo : GMMappingItem
 
-@property (nonatomic, copy) NSString *trackID;
 @property (nonatomic, copy) NSString *artistImageBaseUrl;
 @property (nonatomic, copy) NSString *albumArtUrl;
 @property (nonatomic, copy) NSString *genre;

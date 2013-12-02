@@ -46,6 +46,28 @@
     }
 }
 
+- (void)executeCall:(GMCall *)call withCompletion:(GMCompletionBlock)completion {
+    if (![self isAuthenticated]) {
+        [self executeCompletion:completion withResult:[GMResult resultWithStatus:GMStatusInvalidCredentials]];
+        return;
+    }
+    
+    NSMutableURLRequest *request = call.request;
+    
+    void (^requestCompletion)(NSData *, NSURLResponse *, NSError *) = ^(NSData *data, NSURLResponse *response, NSError *error) {
+        GMResult *result = nil;
+        if (error) {
+            result = [GMResult resultWithStatus:GMStatusNetworkError error:error];
+        } else {
+            result = [call processData:data];
+        }
+        if (result) {
+            [self executeCompletion:completion withResult:result];
+        }
+    };    
+    [[self.session dataTaskWithRequest:request completionHandler:requestCompletion] resume];
+}
+
 #pragma mark -
 - (void)loginWithCredentials:(GMCredentials *)crendetials completion:(GMCompletionBlock)completion {
     [self executeCompletion:completion withResult:[GMResult resultWithStatus:GMStatusConsistencyError error:nil]];
@@ -55,7 +77,7 @@
     [self executeCompletion:completion withResult:[GMResult resultWithStatus:GMStatusConsistencyError error:nil]];
 }
 
-- (void)streamURLForTrack:(GMTrackInfo *)track completion:(GMCompletionBlock)completion {
+- (void)streamURLForTrackId:(NSString *)trackId completion:(GMCompletionBlock)completion {
     [self executeCompletion:completion withResult:[GMResult resultWithStatus:GMStatusConsistencyError error:nil]];
 }
 

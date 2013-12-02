@@ -10,3 +10,4 @@
 #import "GMCredentials.h"
 #import "GMWebClient.h"
 #import "GMTrackInfo.h"
+#import "GMPlaylistInfo.h"
