@@ -3,4 +3,4 @@ xcode_project: GMusicAPIClient/GMusicAPIClient.xcodeproj
 xcode_scheme: GMusicAPIClient
 xcode_sdk: iphonesimulator
 
-script: xctool -project GMusicAPIClient/GMusicAPIClient.xcodeproj -scheme GMusicAPIClient -sdk iphonesimulator build
+script: xctool -project GMusicAPIClient/GMusicAPIClient.xcodeproj -scheme GMusicAPIClient -sdk iphonesimulator  ONLY_ACTIVE_ARCH=NO
