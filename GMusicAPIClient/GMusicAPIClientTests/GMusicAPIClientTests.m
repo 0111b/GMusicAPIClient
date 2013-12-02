@@ -16,7 +16,7 @@
 
 BOOL isTravis() {
     char *travis = getenv("TRAVIS");
-    return (travis && (strcmp(travis, "YES") == 0));
+    return (travis && (strcmp(travis, "true") == 0));
 }
 
 #define GM_DISABLE_ON_TRAVIS if(isTravis()) return
