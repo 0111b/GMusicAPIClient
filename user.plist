@@ -6,5 +6,7 @@
 	<string>your username</string>
 	<key>password</key>
 	<string>your password</string>
+	<key>disableTests</key>
+	<true/>
 </dict>
 </plist>

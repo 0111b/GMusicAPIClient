@@ -11,18 +11,16 @@
 #import "GMusicAPIClient.h"
 
 @interface GMusicAPIClientTests : XCTestCase
-
+@property (nonatomic, assign) BOOL isTestsDisabled;
 @end
 
-BOOL isTravis() {
-    char *travis = getenv("TRAVIS");
-    BOOL isTravis = (travis && (strcmp(travis, "true") == 0));
-    isTravis |= ([[NSProcessInfo processInfo] environment][@"TRAVIS"] != nil);
-    return isTravis;
+
+
+BOOL testAreDisabled() {
+    NSURL *url = [NSURL URLWithString:@"user.plist" relativeToURL:[[NSBundle bundleForClass:[GMusicAPIClientTests class]] resourceURL]];
+    NSDictionary *d = [NSDictionary dictionaryWithContentsOfURL:url];
+    return  [d[@"disableTests"] boolValue];
 }
-
-#define GM_DISABLE_ON_TRAVIS if(isTravis()) return
-
 
 GMCredentials *testCredentials() {
     NSURL *url = [NSURL URLWithString:@"user.plist" relativeToURL:[[NSBundle bundleForClass:[GMusicAPIClientTests class]] resourceURL]];
@@ -36,7 +34,7 @@ GMCredentials *testCredentials() {
 - (void)setUp
 {
     [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
+    self.isTestsDisabled = testAreDisabled();
 }
 
 - (void)tearDown
@@ -56,7 +54,7 @@ GMCredentials *testCredentials() {
 }
 
 - (void)test3Login {
-    GM_DISABLE_ON_TRAVIS;
+    if (self.isTestsDisabled) return;
     [[GMWebClient sharedInstance] loginWithCredentials:testCredentials()
                                             completion:^(GMResult *result) {
                                                 if ([result isValid]) {
@@ -70,7 +68,7 @@ GMCredentials *testCredentials() {
 }
 
 - (void)test4ListOfUserPlaylist {
-    GM_DISABLE_ON_TRAVIS;
+    if (self.isTestsDisabled) return;
     [[GMWebClient sharedInstance] listOfUserPlaylists:^(GMResult *result) {
                                                 if ([result isValid]) {
                                                     NSLog(@"data:%@",result.data);
