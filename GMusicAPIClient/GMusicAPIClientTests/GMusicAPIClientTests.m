@@ -16,7 +16,9 @@
 
 BOOL isTravis() {
     char *travis = getenv("TRAVIS");
-    return (travis && (strcmp(travis, "true") == 0));
+    BOOL isTravis = (travis && (strcmp(travis, "true") == 0));
+    isTravis |= ([[NSProcessInfo processInfo] environment][@"TRAVIS"] != nil);
+    return isTravis;
 }
 
 #define GM_DISABLE_ON_TRAVIS if(isTravis()) return
